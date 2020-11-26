@@ -51,8 +51,8 @@ DadosAlergia.create({
    // DataInclusao:"",
 
 })
-
 */
+
 
 module.exports = DadosAlergia;
 

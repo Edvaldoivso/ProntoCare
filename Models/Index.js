@@ -72,7 +72,7 @@ var IndexDB = db.sequelize.define('Index',{
  
 
 
- IndexDB.belongsToMany(IndexDB, {
+ IndexDB.belongsTo(IndexDB, {
      as:'IndexDB',
  foreingKey:'id'
 

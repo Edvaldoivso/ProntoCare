@@ -57,8 +57,8 @@ TelefoneHospital:{
 
 //DadosConsulta.sync({force:true})
 
-
 /*
+
 DadosConsulta.create({
 
     Consulta:'Cardiologista',
@@ -74,7 +74,7 @@ DadosConsulta.create({
     
     })
 
+
+
 */
-
-
     module.exports = DadosConsulta;

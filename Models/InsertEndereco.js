@@ -39,7 +39,7 @@ var DadosEndereco =  db.sequelize.define('Endereco', { // Este é a forma de mon
 
 
 
-DadosEndereco.sync({force:true}); //Este é o modelo correto do Insert
+//DadosEndereco.sync({force:true}); //Este é o modelo correto do Insert
 
 /*
 DadosEndereco.create({
