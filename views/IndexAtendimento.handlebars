@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+       <meta charset="utf-8"/>
+       <title>Prontuário</title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	   <link rel="stylesheet" type="text/css" href="/Atendimento.css">
+	 <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script> 
+
+
+	   
+	   
+   </head>
+   <body>
+  
+        
+		
+	    <div id="Corpo">
+			
+            <div id="Itens">
+                    
+
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+  <a href="#Prontuario">Prontuario</a>
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+ <a href="#Consultas">Consultas</a>
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+ <a href="#Vacinas">Vacinas</a>
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  <a href="#Alertas">Central de Alertas</a>
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  <a href="#Alergias">Central de Alergias</a>
+</button>
+
+
+    
+
+
+
+</br>
+
+    <div id="curve_chart" style="width: 100%; height: 300px">Histórico de Saúde
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Temperatura', 'Pressão', 'Hemoglobina'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,     1600]
+        ]);
+
+        var options = {
+          title: 'Balanço Sanguineo',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+ 
+
+
+
+
+
+            </div>
+</br>
+
+            <div  id="Peso" style="width: 100%; height: 300px">
+
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Massa Corporea', 'Massa Magra', 'Massa Gorda'],
+          ['2004',  1000,      40],
+          ['2005',  1170,      460],
+          ['2006',  400,       6020],
+          ['2007',  2030,     1000]
+        ]);
+
+        var options = {
+          title: 'Controle de Peso',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('Peso'));
+
+        chart.draw(data, options);
+      }
+    </script>
+                
+            </div>
+
+<div id="Prontuario">
+    <h3>Prontuario</h3>
+	{{#IndexDB}}
+
+        <p>Alergia: {{DadosAlergia.NomeAlergia}}</p>
+        <p>e-mail Principal: {{email}}</p>
+        <p><Telefone Recados: {{TelefoneRecado}} </p>
+       <p>e-mail Opcional: {{emailOpcional}}</p>
+
+    	{{/IndexDB}}
+
+
+</div>
+
+
+<div id="Consultas">
+    
+    Consultas
+    
+    </div>
+
+<div id="Vacinas">
+    
+    Vacinas
+    
+    </div>
+
+
+<div id="Alertas">
+    
+    Alertas
+    
+    </div>
+
+<div id="Alergias">
+    
+    Alergias
+    
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+	   
+	   
+	   
+	   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+   </body>
+</html>

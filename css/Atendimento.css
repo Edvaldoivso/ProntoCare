@@ -1,0 +1,36 @@
+
+
+
+body{
+	background-color:#7e7e9d;
+	padding:2%;
+	color:#ffffff;
+    margin-bottom: 5%;
+   
+    
+	
+}
+
+#Corpo{
+	display:flex;
+	flex-direction:column;
+	
+    background-color:#1a1a8e;
+    width: 95%;
+  
+
+	
+	
+}
+
+#Itens{
+    top: 50px;
+    background-color:#540928;
+    
+    height: 100%;
+   
+	justify-content: center;
+    align-items: center;
+    
+    
+}
