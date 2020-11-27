@@ -216,6 +216,31 @@ app.get("/Prontuario",function(req,res){
 
 
 
+/*
+app.get("/IndexAtendimento", function(req, res){
+    //res.render("IndexAtendimento")
+    
+    DadosProntuario.update({
+    
+    Nome:"Teste",
+    CPF:45000000
+       
+},{
+    where:{
+        id:1
+    }
+}
+
+).then(function(DadosProntuario){                   
+    res.render('IndexAtendimento',{DadosProntuario:DadosProntuario})
+}).catch(function(err){
+console.log("Tivemos um erro em" + err)
+})
+
+   
+})
+*/
+
 
 
 
@@ -228,19 +253,12 @@ app.get("/Prontuario",function(req,res){
 app.get("/IndexAtendimento", function(req, res){
     //res.render("IndexAtendimento")
     
-IndexDB.update({
-    
-    Nome:"Teste",
-    CPF:45000000
-       
-},{
-    where:{
-        id:1
-    }
-}
-
-).then(function(IndexDB){                   
-    res.render('IndexAtendimento',{IndexDB:IndexDB})
+    DadosProntuario.findOne({
+        where:{
+            nome:"TESTE"
+        }
+}).then(function(DadosProntuario){                   
+    res.render('IndexAtendimento',{DadosProntuario:DadosProntuario})
 }).catch(function(err){
 console.log("Tivemos um erro em" + err)
 })
@@ -253,10 +271,28 @@ console.log("Tivemos um erro em" + err)
 
 
 
-
-
-
-
+app.post('Update',function(req,res){
+    //res.send("Titulo:" + req.body.Descricao + "Aqui o Titulo </br>" + "CPF:" + req.body.Titulo)
+    DadosProntuario.findOne({
+            
+                   
+                 NomeAlergia:req.body.Titulo,
+                CPF:req.body.CPF,
+                
+                
+        }).then(function(DadosProntuario){
+        if(DadosProntuario){
+            res.render("Salvei Sucesso")
+        }else{
+            res.send("Erro")    
+    
+        }
+    
+        }).catch(function(err){
+            console.log("Tivemos um erro em" + DadosProntuario + err)
+        })
+    
+    })
 
 
 

@@ -1,4 +1,19 @@
 
+a:link{
+    color:#000000
+}
+
+a:visited{
+    color:#000000
+}
+
+a:hover{
+    color:#000000
+}
+
+a:active{
+    color:#000000
+}
 
 
 body{
@@ -33,4 +48,65 @@ body{
     align-items: center;
     
     
+}
+
+
+#Prontuario{
+    top: 50px;
+    background-color:#2903b4;
+    padding: 2%;
+    margin-bottom: 10%;
+
+}
+
+#Consultas{
+    top: 50px;
+    background-color:#58935c;
+    padding: 2%;
+    margin-bottom: 10%;
+
+
+}
+
+#Vacinas{
+
+    top: 50px;
+    background-color:#030f04;
+    padding: 2%;
+    margin-bottom: 10%;
+
+}
+
+#Graficos{
+    top: 50px;
+    background-color:#0e0e7b;
+    padding: 2%;
+    margin-bottom: 10%;
+
+}
+
+#Alertas{
+    top: 50px;
+    background-color:#65658a;
+    padding: 2%;
+    margin-bottom: 10%;
+
+}
+
+#Alergias{
+    top: 50px;
+    background-color:#f6ff00;
+    padding: 2%;
+    margin-bottom: 10%;
+
+}
+
+
+#Atendimentos{
+
+    top: 50px;
+    background-color:#17683e;
+    padding: 2%;
+    margin-bottom: 10%;
+
 }

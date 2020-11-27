@@ -220,6 +220,15 @@ var DadosProntuario = db.sequelize.define('Prontuario', {
         field:'Numero'
     },
 
+    Vacina :{
+        type:db.Sequelize.STRING,
+        field:'vacina'
+    },
+    Validade:{
+        type:db.Sequelize.DATE,
+        field:'Date'
+    }
+
 
 
 
@@ -239,17 +248,17 @@ onUpdate:'CASCADE'
 /*
 DadosProntuario.create({
     
-    Nome:"TESTE",
-    senha:"ARROZ",
-    CPF:"205.898.358-55",
+    Nome:"SEGUNDO PAC",
+    senha:"TESTE",
+    CPF:"205.898.000-00",
     RG:"246.000.456.x",
-    Idade:50,
-    Fenotipo:"1",
-    Peso:"75",
-    Altura:"1.80",
-    SexoBiologico:"2",
-    Genero:"2",
-    GrupoRisco:"1",
+    Idade:22,
+    Fenotipo:"2",
+    Peso:"60",
+    Altura:"1.50",
+    SexoBiologico:"FEMININO",
+    Genero:"MASCULINO",
+    GrupoRisco:"NAO",
     DisturbioPsquicos:"1",
     PCD:"2",
     GrSanguineo:"O+",
@@ -267,15 +276,16 @@ DadosProntuario.create({
     emailOpcional:"edvaldoivo@ivo.com.br",
     TelefoneCuidador:1158442544,
     NomeResponsavel:"Carlota Joaquina",
-    NomeCuidador:"Ozorio"
-
+    NomeCuidador:"Ozorio",
+    Vacina:"BCG",
+    Validade:55152588
 
     
     })
     
-    
+    */
 
-*/
+
 
 
 
