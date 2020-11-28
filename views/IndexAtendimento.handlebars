@@ -1,447 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-   <head>
-       <meta charset="utf-8"/>
-       <title>Prontuário</title>
-	   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	   <link rel="stylesheet" type="text/css" href="/Atendimento.css">
-	 <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script> 
 
-
-	   
-	   
-   </head>
-   <body>
-  
-        
-		
-	    <div id="Corpo">
-			
-            <div id="Itens">
-                    
-
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
-  <a href="#Prontuario">Prontuario</a>
-</button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
- <a href="#Consultas">Consultas</a>
-</button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
- <a href="#Vacinas">Vacinas</a>
-</button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  <a href="#Alertas">Central de Alertas</a>
-</button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  <a href="#Alergias">Central de Alergias</a>
-</button>
-
-
-    
-
-
-
-</br>
-<section id="Graficos">
-    <div id="curve_chart" style="width: 100%; height: 300px">Histórico de Saúde
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Temperatura', 'Pressão', 'Hemoglobina'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,     1600]
-        ]);
-
-        var options = {
-          title: 'Balanço Sanguineo',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
-    </script>
- 
+<head>
+  <meta charset="utf-8" />
+  <title>Prontuário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/Atendimento.css">
+  <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script>
 
 
 
 
+</head>
 
-            </div>
-</br>
-
-            <div  id="Peso" style="width: 100%; height: 300px">
-
-
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Massa Corporea', 'Massa Magra', 'Massa Gorda'],
-          ['2004',  1000,      40],
-          ['2005',  1170,      460],
-          ['2006',  400,       6020],
-          ['2007',  2030,     1000]
-        ]);
-
-        var options = {
-          title: 'Controle de Peso',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('Peso'));
-
-        chart.draw(data, options);
-      }
-    </script>
-                
-            </div>
-
-            </section>
-
-
-<div id="Atendimentos">
-
-{{#each DadosProntuario}}
-    
-
-
-<table class="table table-sm table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Numero do Atendimento</th>
-      <th scope="col">Data do Atendimento</th>
-     
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-     
-      <td>{{id}}</td>
-      <td>{{createdAt}}</td>
-      
-    </tr>
-    
-  </tbody>
-</table>
-
-{{/each}}
-
-  
-</div>
-
-
-<div id="Prontuario">
-    <h3>Prontuario</h3>
-	{{#DadosProntuario}}
-  
-
-<form action="Update" method="POST">
-  <div class="row">
-    <div class="col">
-      <label for="inputEmail4">Paciente:</label>
-      <input type="text" class="form-control" placeholder="Nome" value="{{Nome}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">CPF</label>
-      <input type="text" class="form-control" placeholder="CPF" value="{{CPF}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">RG</label>
-      <input type="text" class="form-control" placeholder="RG" value="{{RG}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Idade</label>
-      <input type="text" class="form-control" placeholder="Idade" value="{{Idade}}">
-    </div>   
-</div>
+<body>
 
 
 
+  <div id="Corpo">
 
-
-
-
-    <div class="row">
-      <div class="col">
-      <label for="inputEmail4">Fenotipo</label>
-      <input type="text" class="form-control" placeholder="Fenótipo" value="{{Fenotipo}}">
-    </div>  
-    <div class="col">
-      <label for="inputEmail4">Peso</label>
-      <input type="text" class="form-control" placeholder="Peso" value="{{Peso}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Altura</label>
-      <input type="text" class="form-control" placeholder="Altura" value="{{Altura}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Sexo</label>
-      <input type="text" class="form-control" placeholder="Sexo" value="{{SexoBiologico}}">
-    </div>
-  </div>
-    
-
-
-
-    <div class="row">
    
 
-    <div class="col">
-      <label for="inputEmail4">Genero</label>
-      <input type="text" class="form-control" placeholder="Genero" value="{{Genero}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Risco</label>
-      <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
-      <input type="text" class="form-control" placeholder="Disturbios" value="{{DisturbioPsquicos}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4"></label>
-      <input type="text" class="form-control" placeholder="PCD" value="{{PCD}}">
-    </div>
-  </div>
-  
- 
-  <div class="row">
-    <div class="col">
-      <label for="inputEmail4">GrSanguineo</label>
-      <input type="text" class="form-control" placeholder="Grupo Sanguineo" value="{{GrSanguineo}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Pressão</label>
-      <input type="text" class="form-control" placeholder="Presão" value="{{Pressao}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Doador</label>
-      <input type="text" class="form-control" placeholder="Doador" value="{{Doador}}">
-    </div>
-   </div>
 
+      
 
-
-<button type="button" class="btn btn-info">Update</button>
-
-</form>
-
-    	{{/DadosProntuario}}
-
-
-</div>
-
-
-<div id="Consultas">
-    
-    <h3>Consultas</h3>
-  {{#DadosProntuario}}
+      <div id="Atendimentos">
 
 
 
 
-    <form>
-  <div class="row">
-    <div class="col">
-      <label for="inputEmail4">Tipo de Consulta</label>
-      <input type="text" class="form-control" placeholder="Consultas" value="{{Consulta}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Data Consulta</label>
-      <input type="text" class="form-control" placeholder="Data" value="{{Data}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Especialidade</label>
-      <input type="text" class="form-control" placeholder="Especialidade" value="{{Especialidade}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Medico</label>
-      <input type="text" class="form-control" placeholder="Medico" value="{{Medico}}">
-    </div>   
-</div>
+
+        <table class="table table-sm table-dark">
+          <thead>
+
+            <tr>
+              <th scope="col">Numero do Atendimento</th>
+              <th scope="col">Data do Atendimento</th>
+              <th scope="col">Item Aleatorio</th>
+            </tr>
+          </thead>
+          {{#each DadosProntuario}}
+          <tbody>
+            <tr>
+
+              <td class="NumAtende">{{id}}<button><a href="http://localhost:8081/DadosAtendimento/1">Acessar Atendimento</a></button></td>
+              <td>{{Data}}</td>
+              <td>{{senha}}</td>
+              
+            </tr>
+          </tbody>
+          {{/each}}
+        </table>
+
+
+
+      </div>
 
 
 
 
 
 
-
-    <div class="row">
-      <div class="col">
-      <label for="inputEmail4">Hospital</label>
-      <input type="text" class="form-control" placeholder="Hospital" value="{{NomeHospital}}">
-    </div>  
-    <div class="col">
-      <label for="inputEmail4">Logradouro Hospital</label>
-      <input type="text" class="form-control" placeholder="Logradouro" value="{{RuaHospital}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Numero</label>
-      <input type="text" class="form-control" placeholder="Numero" value="{{NumeroHospital}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Bairro</label>
-      <input type="text" class="form-control" placeholder="Bairro" value="{{BairroHospital}}">
-    </div>
-  </div>
-    
+      </br>
+      <section id="Graficos">
 
 
 
-    <div class="row">
-   
 
-    <div class="col">
-      <label for="inputEmail4">Cep Hospital</label>
-      <input type="text" class="form-control" placeholder="Cep" value="{{CepHospital}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Risco</label>
-      <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
-      <input type="text" class="form-control" placeholder="Disturbios" value="{{DisturbioPsquicos}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">PCD</label>
-      <input type="text" class="form-control" placeholder="PCD" value="{{PCD}}">
-    </div>
-  </div>
-  
- 
-</form>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                  Grafico 1
+                </button>
+              </h5>
+            </div>
 
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <div id="curve_chart" style="width: 100%; height: 300px">Histórico de Saúde
 
-  
-    	{{/DadosProntuario}}
-    
-    </div>
+                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                  <script type="text/javascript">
+                    google.charts.load('current', { 'packages': ['corechart'] });
+                    google.charts.setOnLoadCallback(drawChart);
 
-<div id="Vacinas">
-    
-    <h3>Vacinas</h3>
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                        ['Temperatura', 'Pressão', 'Hemoglobina'],
+                        ['2004', 1000, 400],
+                        ['2005', 1170, 460],
+                        ['2006', 660, 1120],
+                        ['2007', 1030, 1600]
+                      ]);
 
+                      var options = {
+                        title: 'Balanço Sanguineo',
+                        curveType: 'function',
+                        legend: { position: 'bottom' }
+                      };
 
-    {{#DadosProntuario}}
+                      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-     <form>
-  <div class="row">
-    <div class="col">
-      <label for="inputEmail4">Descrição da Vacina</label>
-      <input type="text" class="form-control" placeholder="Vacinas" value="{{Vacina}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Data Validade</label>
-      <input type="text" class="form-control" placeholder="DataValidade" value="{{Validade}}">
-    </div>
-</div>
-</form>
-
-
-    	{{/DadosProntuario}}
-    
-    </div>
-
-
-<div id="Alertas">
-    
-    <h3>Definir Lembretes</h3>
-
-    {{#DadosProntuario}}
-
-    <form>
-  <div class="row">
-    <div class="col">
-      <label for="inputEmail4">Tipo de Lembrete</label>
-      <input type="text" class="form-control" placeholder="Alertas" value="">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Hora:</label>
-      <input type="text" class="form-control" placeholder="Hora" value="">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Data:</label>
-      <input type="text" class="form-control" placeholder="Data" value="">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Descrição:</label>
-      <input type="text" class="form-control" placeholder="Descrição" value="">
-    </div>
-</div>
-</form>
-
-    	{{/DadosProntuario}}
-    
-    </div>
-
-<div id="Alergias">
-    
-    <h3>Alergias</h3>
-    
-  {{#each DadosProntuario}}
+                      chart.draw(data, options);
+                    }
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo">
+                  Grafico 2
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <div id="Peso" style="width: 100%; height: 300px">
 
 
+                  <script type="text/javascript">
+                    google.charts.load('current', { 'packages': ['corechart'] });
+                    google.charts.setOnLoadCallback(drawChart);
 
-<form>
-  <div class="row">
-    <div class="col">
-      <label for="inputEmail4">Tipo de Alergia</label>
-      <input type="text" class="form-control" placeholder="Alertas" value="{{NomeAlergia}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Descricao:</label>
-      <input type="text" class="form-control" placeholder="Hora" value="{{Descricao}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">Homologador:</label>
-      <input type="text" class="form-control" placeholder="Data" value="{{Homologador}}">
-    </div>
-    <div class="col">
-      <label for="inputEmail4">DataInclusao:</label>
-      <input type="text" class="form-control" placeholder="Descrição" value="{{DataInclusao}}">
-    </div>
-</div>
-</form>
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                        ['Massa Corporea', 'Massa Magra', 'Massa Gorda'],
+                        ['2004', 1000, 40],
+                        ['2005', 1170, 460],
+                        ['2006', 400, 6020],
+                        ['2007', 2030, 1000]
+                      ]);
 
-    	{{/each}}
+                      var options = {
+                        title: 'Controle de Peso',
+                        curveType: 'function',
+                        legend: { position: 'bottom' }
+                      };
 
-    </div>
+                      var chart = new google.visualization.LineChart(document.getElementById('Peso'));
+
+                      chart.draw(data, options);
+                    }
+                  </script>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
+                  Grafico 3
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                Pode Inserir um tipo diferente de grafico aqui!!
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        </br>
 
 
 
 
 
 
-</div>
+
+      </section>
 
 
 
 
 
-	   
-	   
-	   
-	   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 
-   </body>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>

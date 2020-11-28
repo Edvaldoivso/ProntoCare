@@ -20,7 +20,7 @@ body{
 	background-color:#7e7e9d;
 	padding:2%;
 	color:#ffffff;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
    
     
 	
@@ -32,6 +32,7 @@ body{
 	
     background-color:#1a1a8e;
     width: 95%;
+    color:#000000;
   
 
 	
@@ -46,7 +47,8 @@ body{
    
 	justify-content: center;
     align-items: center;
-    
+    border:1px solid #00ff66;
+    border-radius: 2%;
     
 }
 
@@ -55,7 +57,8 @@ body{
     top: 50px;
     background-color:#2903b4;
     padding: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
+    border-radius: 2%;
 
 }
 
@@ -63,8 +66,9 @@ body{
     top: 50px;
     background-color:#58935c;
     padding: 2%;
-    margin-bottom: 10%;
-
+    margin-bottom: 1%;
+    border:1px solid #a10b0b;
+    border-radius: 2%;
 
 }
 
@@ -73,7 +77,9 @@ body{
     top: 50px;
     background-color:#030f04;
     padding: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
+    border:1px solid #00c8ff;
+    border-radius: 2%;
 
 }
 
@@ -81,24 +87,27 @@ body{
     top: 50px;
     background-color:#0e0e7b;
     padding: 2%;
-    margin-bottom: 10%;
-
+    margin-bottom: 1%;
+    border:1px solid #2f0cae;
+    border-radius: 2%;
 }
 
 #Alertas{
     top: 50px;
     background-color:#65658a;
     padding: 2%;
-    margin-bottom: 10%;
-
+    margin-bottom: 1%;
+    border:1px solid #ff0000;
+    border-radius: 2%;
 }
 
 #Alergias{
     top: 50px;
     background-color:#f6ff00;
     padding: 2%;
-    margin-bottom: 10%;
-
+    margin-bottom: 1%;
+    border:1px solid #000000;
+    border-radius: 2%;
 }
 
 
@@ -107,6 +116,7 @@ body{
     top: 50px;
     background-color:#17683e;
     padding: 2%;
-    margin-bottom: 10%;
-
+    margin-bottom: 1%;
+    border-radius: 2%;
+    border:1px solid #f6ff00;
 }
