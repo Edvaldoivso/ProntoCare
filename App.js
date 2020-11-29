@@ -16,6 +16,7 @@ const { urlencoded } = require('body-parser');
 const { sequelize } = require('./Models/db');
 const { where } = require('sequelize');
 const { response } = require('express');
+const DadosVacina = require('./Models/InsertVacinas');
 const app = express();
 
 
@@ -59,43 +60,43 @@ app.get("/Index", function (req, res) {
 
 
 
-app.post('/Login', function (req, res) {
+    app.post('/Login', function (req, res) {
 
-    InsertLogin.findOne({
+        InsertLogin.findOne({
 
-        
-        where: {
-            senha: req.body.senha,
-            cpf: req.body.CPF
-        }
-    }).then(function (InsertLogin) {
-        if (InsertLogin) {
-            res.render("Home")
-        } else {
-            //res.render("Index");        
-            //var mensagem = InsertLogin=InsertLogin?InsertLogin:"usuario";
-            //console.log("Não Encontrei o "+InsertLogin)
-            //return mensagem;
-            res.render("Erro")
-        }
 
-    }).catch(function (err) {
-        console.log("Não Encontrei o " + InsertLogin + "tive um erro: " + err)
+            where: {
+                senha: req.body.senha,
+                cpf: req.body.CPF
+            }
+        }).then(function (InsertLogin) {
+            if (InsertLogin) {
+                res.render("Home")
+            } else {
+                //res.render("Index");        
+                //var mensagem = InsertLogin=InsertLogin?InsertLogin:"usuario";
+                //console.log("Não Encontrei o "+InsertLogin)
+                //return mensagem;
+                res.render("Erro")
+            }
+
+        }).catch(function (err) {
+            console.log("Não Encontrei o " + InsertLogin + "tive um erro: " + err)
+
+        })
+
 
     })
 
-
-})
-
 app.get("/Vacinas", function (req, res) {
     //res.render("Vacinas");
-    InsertVacinas.findOne({
+    DadosProntuario.findOne({
         where: {
-            id: 2,
+            id: 1,
         },
     }
-    ).then(function (InsertVacinas) {
-        res.render('Vacinas', { InsertVacinas: InsertVacinas })
+    ).then(function (DadosProntuario) {
+        res.render('Vacinas', { DadosProntuario: DadosProntuario })
     })
 
 }),
@@ -105,14 +106,14 @@ app.get("/Vacinas", function (req, res) {
         //res.render("Consultas")
 
 
-        InsertConsultas.findOne({
+        DadosProntuario.findOne({
             where: {
                 //senha: req.body.senha,
                 id: 1
             },
         }
-        ).then(function (DadosConsulta) {
-            res.render('Consultas', { DadosConsulta: DadosConsulta })
+        ).then(function (DadosProntuario) {
+            res.render('Consultas', { DadosProntuario: DadosProntuario })
 
         })
 
@@ -138,14 +139,14 @@ app.get("/Alergias", function (req, res) {
     //res.render("Alergias")
 
 
-    DadosAlergia.findOne({
+    DadosProntuario.findOne({
         where: {
             //senha: req.body.senha,
-            id: 2,
+            id: 1,
         },
     }
-    ).then(function (DadosAlergia) {
-        res.render('Alergias', { DadosAlergia: DadosAlergia })
+    ).then(function (DadosProntuario) {
+        res.render('Alergias', { DadosProntuario: DadosProntuario })
     })
 
 })
@@ -184,7 +185,7 @@ app.get("/Prontuario", function (req, res) {
     DadosProntuario.findOne({
         where: {
             //senha: req.body.senha,
-            id: 2,
+            id: 1,
         },
     }
     ).then(function (DadosProntuario) {
@@ -218,7 +219,7 @@ app.get("/IndexAtendimento", function (req, res) {
         }
     }).then(function (DadosProntuario) {
         res.render('IndexAtendimento', { DadosProntuario: DadosProntuario })
-       
+
 
     }).catch(function (err) {
         console.log("Tivemos um erro em" + err)
@@ -230,19 +231,19 @@ app.get("/IndexAtendimento", function (req, res) {
 
 
 
-app.get("/DadosAtendimento/:id",async function(req, res) {
+app.get("/DadosAtendimento/:id", async function (req, res) {
     //res.render("IndexAtendimento")
-    
+
 
     await DadosProntuario.findOne({
-        
+
         where: {
-           id: req.params.id
+            id: req.params.id
         }
     }).then(function (DadosProntuario) {
         res.render('DadosAtendimento', { DadosProntuario: DadosProntuario })
-        console.log("Valor parametro= "+ req.params.id)
-       
+        console.log("Valor parametro= " + req.params.id)
+
 
     }).catch(function (err) {
         console.log("Tivemos um erro em" + err)
@@ -254,93 +255,176 @@ app.get("/DadosAtendimento/:id",async function(req, res) {
 
 
 
-app.post("/IndexUpdate/:id",  function(req, res){
-    //res.render("IndexAtendimento")
-    
-     DadosProntuario.update({
-        nome:'Novo Teste',   
-        Peso:req.body.Peso ,
-        Pressao:req.body.Pressao ,
-        Idade:req.body.Idade,
-        Rua:req.body.Rua ,
-        Bairro:req.body.Bairro ,
-        Cidade:req.body.Cidade ,
-        Cep:req.body.Cep ,
-        Complemento:req.body.Complemento ,
-        Numero:req.body.Numero ,
-        //TelefoneEmergencia:req.body.TelefoneEmergencia ,
-        email:req.body.email ,
-        TelefoneRecado:req.body.TelefoneRecado ,
-        emailOpcional:req.body.emailOpcional ,
-        NomeResponsavel:req.body.NomeResponsável ,
-        NomeCuidador:req.body.NomeCuidador ,
-        TelefoneCuidador:req.body.TelefoneCuidador
+app.post("/IndexUpdate", function (req, res) {
+       DadosProntuario.update({
+        Nome: req.body.nome,    
+        Peso: req.body.Peso,
+        Pressao: req.body.Pressao,
+        Idade: req.body.Idade,
+        Rua: req.body.Rua,
+        Bairro: req.body.Bairro,
+        Cidade: req.body.Cidade,
+        Cep: req.body.Cep,
+        Complemento:req.body.complemento,
+        Numero:req.body.numero,
+        email: req.body.email,
+        TelefoneRecado: req.body.TelefoneRecado,
+        emailOpcional: req.body.emailOpcional,
+        NomeResponsavel: req.body.NomeResponsável,
+        NomeCuidador: req.body.NomeCuidador,
+        TelefoneCuidador: req.body.TelefoneCuidador
 
        
-},{
-    where:{
-        id: req.params.id
-    }
-}
-
-).then(function(DadosProntuario){                   
-    res.render('DadosAtendimento',{DadosProntuario:DadosProntuario})
-}).catch(function(err){
-console.log("Tivemos um erro em" + err)
-})
-
-   
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-app.post('Update', function (req, res) {
-    //res.send("Titulo:" + req.body.Descricao + "Aqui o Titulo </br>" + "CPF:" + req.body.Titulo)
-    DadosProntuario.findOne({
-
-
-        NomeAlergia: req.body.Titulo,
-        CPF: req.body.CPF,
-
-
-    }).then(function (DadosProntuario) {
-        if (DadosProntuario) {
-            res.render("Salvei Sucesso")
-        } else {
-            res.send("Erro")
-
+    },{
+        where: {
+            id:2
         }
+    }
 
+    ).then(function (DadosProntuario) {
+        //res.render("IndexAtendimento")
+        res.render('DadosAtendimento')
     }).catch(function (err) {
-        console.log("Tivemos um erro em" + DadosProntuario + err)
+        console.log("Tivemos um erro em" + err)
     })
 
+
 })
 
 
 
 
 
-*/
+app.post("/IndexUpdate", function (req, res) {
+       DadosProntuario.update({
+        Nome: req.body.nome,    
+        Peso: req.body.Peso,
+        Pressao: req.body.Pressao,
+        Idade: req.body.Idade,
+        Rua: req.body.Rua,
+        Bairro: req.body.Bairro,
+        Cidade: req.body.Cidade,
+        Cep: req.body.Cep,
+        Complemento:req.body.complemento,
+        Numero:req.body.numero,
+        email: req.body.email,
+        TelefoneRecado: req.body.TelefoneRecado,
+        emailOpcional: req.body.emailOpcional,
+        NomeResponsavel: req.body.NomeResponsável,
+        NomeCuidador: req.body.NomeCuidador,
+        TelefoneCuidador: req.body.TelefoneCuidador
+
+       
+    },{
+        where: {
+            id:2
+        }
+    }
+
+    ).then(function (DadosProntuario) {
+        //res.render("IndexAtendimento")
+        res.render('DadosAtendimento')
+    }).catch(function (err) {
+        console.log("Tivemos um erro em" + err)
+    })
+
+
+})
+
+
+
+
+
+app.post("/NovaConsulta", function (req, res) {
+    DadosProntuario.create({
+        Nome:"Teste",
+        Consulta: req.body.Consulta,    
+        Data: req.body.Data,
+        Especialidade: req.body.Especialidade,
+        Medico: req.body.Medico,
+        NomeHospital: req.body.NomeHospital,
+        RuaHospital: req.body.RuaHospital,
+        CepHospital: req.body.CepHospital,
+        GrupoRisco: req.body.GrupoRisco,
+        PCD:req.body.PCD,
+        DisturbioPsquicos:req.body.DisturbioPsquicos,
+         
+ }).then(function (DadosProntuario) {
+     //res.render("IndexAtendimento")
+     res.send('DadosAtendimento')
+ }).catch(function (err) {
+     console.log("Tivemos um erro em" + err)
+ })
+
+
+})
+
+
+
+app.post("/NovaVacina", function (req, res) {
+    DadosProntuario.create({
+
+        Nome:req.body.nome,
+        Vacina:req.body.Vacina,
+        
+         
+ }).then(function (DadosProntuario) {
+  res.send('DadosAtendimento')
+ }).catch(function (err) {
+     console.log("Tivemos um erro em" + err)
+ })
+
+
+})
+
+
+
+app.post("/NovoLembrete", function (req, res) {
+    DadosProntuario.create({
+        Alertas:req.body,
+        Hora:req.body,
+        Data:req.body,
+        Descrição:req.body,
+
+
+         
+ }).then(function (DadosProntuario) {
+     //res.render("IndexAtendimento")
+     res.send('DadosAtendimento')
+ }).catch(function (err) {
+     console.log("Tivemos um erro em" + err)
+ })
+
+
+})
+
+
+app.post("/NovaAlergia", function (req, res) {
+    DadosProntuario.create({
+        NomeAlergia:req.body.NomeAlergia,
+        Descricao:req.body.Descricao,
+        Homologador:req.body.Homologador,
+        DataInclusao:req.body.DataInclusao,
+         
+ }).then(function (DadosProntuario) {
+     //res.render("IndexAtendimento")
+     res.send('DadosAtendimento')
+ }).catch(function (err) {
+     console.log("Tivemos um erro em" + err)
+ })
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(8081);

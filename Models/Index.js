@@ -80,7 +80,7 @@ var IndexDB = db.sequelize.define('Index',{
 })
 
 
-
+/*
 IndexDB.create({
 idEndereco:1,
 idAlergias:1,
@@ -89,7 +89,7 @@ Nome:"TESTE",
 senha:"ARROZ",
 
 })
-
+*/
  //IndexDB.sync({force:true})
 
 

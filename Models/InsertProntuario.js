@@ -235,11 +235,7 @@ var DadosProntuario = db.sequelize.define('Prontuario', {
 })
 
 
-DadosProntuario.belongsTo(IndexDB, {
-    as: 'Index',
-    foreingKey: 'id',
-    onUpdate: 'CASCADE'
-})
+
 
 //DadosProntuario.sync({force:true});//Esta linha serve para criar a tabela
 
