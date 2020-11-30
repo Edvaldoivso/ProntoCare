@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-   <head>
-       <meta charset="utf-8"/>
-       <title>Inicio</title>
-	   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	   <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script>
-		<link rel="stylesheet" type="text/css" href="/HomeCSS.css">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Inicio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="/HomeCSS.css">
+	<script  type="text/javascript"  src="CriaRota.js"></script>
+
+
+
+
+</head>
+
+<body>
+	
+
 
 		
+	<a href="http://localhost:8081/Index" onclick="Limpar()"><i class="fas fa-power-off">Logout</i></a>
 
+	<div id="icones">
 
-   </head>
-   <body>
+		<div class="bloco" onClick="Consultas()">
+			<i class="fas fa-user-md"></i>
+			<a >
+				<p>Consultas</p>
+			</a>
 
-	  
+		</div>
 
-	   <a href="/Index"> <i class="fas fa-power-off">Logout</i></a>
-       <div id="icones">
-	   
-	   <div class="bloco">
-	   <i class="fas fa-user-md"></i>
-	   <a href="Consultas"><p>Consultas</p></a>
-	   
-	   </div>
-	   
-	    <div class="bloco">
-		<i class="fas fa-book-medical"></i>
-	   <a href="Prontuario"><p>Prontuário</p></a>
-	   </div>
-	   
-	   <div class="bloco">
-	   <i class="fas fa-user-clock"></i>
-	   <a href="Alertas"><p>Alertas</p></a>
-	   </div>
-	   
-	   <div class="bloco">
-		<i class="fas fa-clipboard-check"></i>
-		<a href="Alergias"><p>Alergias</p></a>
-	   </div>
-	   
-	   <div  class="bloco">
-	   <i class="fas fa-file-medical"></i>
-	   <a href="Vacinas"><p>Vacinas</p></a>
-	   </div>
-	   <!--
+		<div class="bloco" onClick="Prontuario()">
+			<i class="fas fa-book-medical"></i>
+			<a>
+				<p>Prontuário</p>
+			</a>
+		</div>
+
+		<div class="bloco" onClick="Alertas()">
+			<i class="fas fa-user-clock"></i>
+			<a>
+				<p>Alertas</p>
+			</a>
+		</div>
+
+		<div class="bloco" onClick="Alergias()">
+			<i class="fas fa-clipboard-check"></i>
+			<a>
+				<p>Alergias</p>
+			</a>
+		</div>
+
+		<div class="bloco" onClick="Vacinas()">
+			<i class="fas fa-file-medical"></i>
+			<a>
+				<p>Vacinas</p>
+			</a>
+		</div>
+		<!--
 	   <div class="bloco">
 	   <i class="fas fa-heartbeat"></i>
 	   <a href="Pressao.html"><p>Pressão</p></a>
@@ -75,21 +91,45 @@
 	   <div class="bloco">
 	   <i class="fas fa-house-user"></i>
 	   <a href="Visitas.html"><p>Visitas</p></a>-->
-	   </div>
-	   
-	   
-	   
-	   </div>
-	   
-	   
-	   
-	   
-	   
-	   
-	   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 
-   </body>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	</div>
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>

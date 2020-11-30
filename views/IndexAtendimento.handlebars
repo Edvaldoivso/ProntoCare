@@ -5,11 +5,13 @@
   <meta charset="utf-8" />
   <title>Prontuário</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script  type="text/javascript"  src="jquery.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/Atendimento.css">
   <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script>
-
+  <script  type="text/javascript"  src="CriaRota.js"></script>
+  
 
 
 
@@ -49,16 +51,18 @@
             <tr>
               <th scope="col">Numero do Atendimento</th>
               <th scope="col">Data do Atendimento</th>
-              <th scope="col">Item Aleatorio</th>
+              <th scope="col">Medico/Enfermeiro</th>
+              <th scope="col">Visualizar</th>
             </tr>
           </thead>
           {{#each DadosProntuario}}
           <tbody>
             <tr>
 
-              <td class="NumAtende">{{id}}<button><a href="http://localhost:8081/DadosAtendimento/1">Acessar Atendimento</a></button></td>
+              <td value="{{id}}">{{id}}</a></td>
               <td>{{Data}}</td>
-              <td>{{senha}}</td>
+              <td>{{Homologador}}</td>
+              <td>Selecionar</td>
               
             </tr>
           </tbody>

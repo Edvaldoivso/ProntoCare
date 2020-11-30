@@ -1,239 +1,277 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-   <head>
-       <meta charset="utf-8"/>
-       <title>Prontuário</title>
-	   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	   <link rel="stylesheet" type="text/css" href="/ProntuarioCSS.css">
-	 <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script> 
 
-
-	   
-	   
-   </head>
-   <body>
-  
-        
-		
-	    
-			
-			<section id="Dados">	
-				
-
-							
-					
-					<p>
-						<a class="btn btn-warning btn-lg btn-block btn-lg btn-block" data-toggle="collapse" href="#collapseDados" role="button" aria-expanded="false" aria-controls="collapseExample">
-						  Dados Básicos
-						</a>
-					 </p>
-					  <div class="collapse" id="collapseDados">
-						<div class="card card-body">
-
-								<div class="form-row">
-    <div class="form-group col-md-6">
-		{{#DadosProntuario}}
-      <label for="inputEmail4">Nome</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Nome}}'>
-	  <label for="inputEmail4">CPF</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{CPF}}'>
-	  <label for="inputEmail4">RG</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{RG}}'>
-	  <label for="inputEmail4">Idade</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Idade}}' readonly>
-	  <label for="inputEmail4"  >Fenotipo</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Fenotipo}}'>
-	  <label for="inputEmail4">Peso</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Peso}}'>
-	  <label for="inputEmail4">Altura</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Altura}}'>
-
-	  <label for="inputEmail4">Sexo Biológico</label>
-	 
-	<select class="form-control" id="exampleFormControlSelect1" selected='{{SexoBiologico}}'>
-		
-      <option id="opcaoMasc" value='2'>Masculino</option>
-      <option id="opcaoFem" value='1'>Feminino</option>
-      </select>
-
-
-	  
-	  <label for="inputEmail4">Genero</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Genero}}'>
-	  <label for="inputEmail4">Risco</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{GrupoRisco}}' readonly>
-	  <label for="inputEmail4">Disturbio</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{DisturbioPsquicos}}' readonly>
-	  <label for="inputEmail4">GrSanguineo</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{GrSanguineo}}' readonly>
-	  <label for="inputEmail4">Pressao</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Pressao}}' readonly>
-	  <label for="inputEmail4">Doador</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Doador}}' readonly>
-	  <label for="inputEmail4">PCD</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{PCD}}' readonly>
-
-	  {{/DadosProntuario}}
-    </div>
-	</div>
+<head>
+	<meta charset="utf-8" />
+	<title>Prontuário</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/ProntuarioCSS.css">
+	<script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script>
+	<script  type="text/javascript"  src="CriaRota.js"></script>
 
 
 
-					<button type="button" class="btn btn-info">Salvar</button>
+</head>
 
+<body>
+
+
+
+
+
+	<section id="Dados">
+
+
+
+
+		<p>
+			<a class="btn btn-warning btn-lg btn-block btn-lg btn-block" data-toggle="collapse" href="#collapseDados"
+				role="button" aria-expanded="false" aria-controls="collapseExample">
+				Dados Básicos
+			</a>
+		</p>
+		<div class="collapse" id="collapseDados">
+			<div class="card card-body">
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						{{#DadosProntuario}}
+						<label for="inputEmail4">Nome</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Nome}}'>
+						<label for="inputEmail4">CPF</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{CPF}}'>
+						<label for="inputEmail4">RG</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{RG}}'>
+						<label for="inputEmail4">Idade</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Idade}}'
+							readonly>
+						<label for="inputEmail4">Fenotipo</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Fenotipo}}'>
+						<label for="inputEmail4">Peso</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Peso}}'>
+						<label for="inputEmail4">Altura</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Altura}}'>
+
+						<label for="inputEmail4">Sexo Biológico</label>
+
+						<select class="form-control" id="exampleFormControlSelect1" selected='{{SexoBiologico}}'>
+
+							<option id="opcaoMasc" value='2'>Masculino</option>
+							<option id="opcaoFem" value='1'>Feminino</option>
+						</select>
+
+
+
+						<label for="inputEmail4">Genero</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Genero}}'>
+						<label for="inputEmail4">Risco</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{GrupoRisco}}' readonly>
+						<label for="inputEmail4">Disturbio</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{DisturbioPsquicos}}' readonly>
+						<label for="inputEmail4">GrSanguineo</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{GrSanguineo}}' readonly>
+						<label for="inputEmail4">Pressao</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Pressao}}' readonly>
+						<label for="inputEmail4">Doador</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Doador}}'
+							readonly>
+						<label for="inputEmail4">PCD</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{PCD}}'
+							readonly>
+
+						{{/DadosProntuario}}
+					</div>
 				</div>
-					  </div>
-
-
-				
 
 
 
-				<p>
-					<a  class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseEndereco" role="button" aria-expanded="false" aria-controls="collapseExample">
-					  Endereço
-					</a>
-				 </p>
-				  <div class="collapse" id="collapseEndereco">
-					<div class="card card-body">					
-							
-  <div class="form-row">
-    <div class="form-group col-md-6">
-		{{#DadosProntuario}}
-      <label for="inputEmail4">Rua</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Rua}}'>
-	  <label for="inputEmail4">Bairro</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Bairro}}'>
-	  <label for="inputEmail4">Cidade</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Cidade}}'>
-	  <label for="inputEmail4">Cep</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Cep}}'>
-	  <label for="inputEmail4">Complemento</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Complemento}}'>
-	  <label for="inputEmail4">Numero</label>
-	  <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Numero}}'>
-	  
-	   {{/DadosProntuario}}
-    </div>
+				<button type="button" class="btn btn-info">Salvar</button>
+
+			</div>
+		</div>
+
+
+
+
+
+
+		<p>
+			<a class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseEndereco" role="button"
+				aria-expanded="false" aria-controls="collapseExample">
+				Endereço
+			</a>
+		</p>
+		<div class="collapse" id="collapseEndereco">
+			<div class="card card-body">
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						{{#DadosProntuario}}
+						<label for="inputEmail4">Rua</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Rua}}'>
+						<label for="inputEmail4">Bairro</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Bairro}}'>
+						<label for="inputEmail4">Cidade</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Cidade}}'>
+						<label for="inputEmail4">Cep</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Cep}}'>
+						<label for="inputEmail4">Complemento</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Complemento}}'>
+						<label for="inputEmail4">Numero</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Numero}}'>
+
+						{{/DadosProntuario}}
+					</div>
+				</div>
+
+
+
+				<button type="button" class="btn btn-info">Salvar</button>
+			</div>
+		</div>
+
+
+
+
+
+		<p>
+			<a class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseContatos" role="button"
+				aria-expanded="false" aria-controls="collapseExample">
+				Contatos
+			</a>
+		</p>
+
+		<div class="collapse" id="collapseContatos">
+			<div class="card card-body">
+				{{#DadosProntuario}}
+				<div class="form-row">
+
+					<div class="form-group col-md-6">
+
+						<label for="inputEmail4">Telefone de Emergêcia</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{TelefoneEmergencia}}'>
+						<label for="inputEmail4">e-mail</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{email}}'>
+						<label for="inputEmail4">Telefone Recados</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{TelefoneRecado}}'>
+						<label for="inputEmail4">e-mail Opcional</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{emailOpcional}}'>
+
+
+
+					</div>
+				</div>
+				{{/DadosProntuario}}
+				<button type="button" class="btn btn-info">Salvar</button>
+			</div>
+
+		</div>
+
+
+
+
+		<p>
+			<a class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseAlergias" role="button"
+				aria-expanded="false" aria-controls="collapseExample">
+				Alergias
+			</a>
+		</p>
+		<div class="collapse" id="collapseAlergias">
+			<div class="card card-body">
+				{{#DadosProntuario}}
+				<div class="form-row">
+
+					<div class="form-group col-md-6">
+
+						<label for="inputEmail4">Tipo de Alergia</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{NomeAlergia}}'>
+						<label for="inputEmail4">Descrição</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{Descricao}}'>
+
+					</div>
+				</div>
+				{{/DadosProntuario}}
+				<button type="button" class="btn btn-info">Salvar</button>
+			</div>
+		</div>
+
+		<p>
+			<a class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseEmergência" role="button"
+				aria-expanded="false" aria-controls="collapseExample">
+				Emergência
+			</a>
+		</p>
+		<div class="collapse" id="collapseEmergência">
+			<div class="card card-body">
+
+				{{#DadosProntuario}}
+				<div class="form-row">
+
+					<div class="form-group col-md-6">
+
+						<label for="inputEmail4">Telefone de Emergêcia</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{TelefoneEmergencia}}'>
+						<label for="inputEmail4">Nome Responsável</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{NomeResponsavel}}'>
+						<label for="inputEmail4">Nome Cuidador</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{NomeCuidador}}'>
+						<label for="inputEmail4">Telefone Cuidador</label>
+						<input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+							value='{{TelefoneCuidador}}'>
+
+					</div>
+				</div>
+				{{/DadosProntuario}}
+
+
+
+				<button type="button" class="btn btn-info">Salvar</button>
+			</div>
+		</div>
+		<a href="http://localhost:8081/Home"><b class="fas fa-home"> Voltar</b></a>
+		
+
 	</div>
 
 
 
-					<button type="button" class="btn btn-info">Salvar</button>
-					</div>
-				  </div>
-
-
-				
-					  
-				  
-				  <p>
-					<a  class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseContatos" role="button" aria-expanded="false" aria-controls="collapseExample">
-						Contatos
-					</a>
-				 </p>
-
-				 <div class="collapse" id="collapseContatos">
-					<div class="card card-body">
-				 {{#DadosProntuario}}
-				  <div class="form-row">
-					  
-    <div class="form-group col-md-6">
-		
-        <label for="inputEmail4">Telefone de Emergêcia</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{TelefoneEmergencia}}'>
-        <label for="inputEmail4">e-mail</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{email}}'>
-        <label for="inputEmail4">Telefone Recados</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{TelefoneRecado}}'>
-        <label for="inputEmail4">e-mail Opcional</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{emailOpcional}}'>
-        
-             
-       
-      </div>
-	</div>
-	{{/DadosProntuario}}
-	<button type="button" class="btn btn-info">Salvar</button>
-					</div>
-					
-				 </div>
-
-
-		
-				  
-				  <p>
-					<a  class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseAlergias" role="button" aria-expanded="false" aria-controls="collapseExample">
-						Alergias
-					</a>
-				 </p>
-				  <div class="collapse" id="collapseAlergias">
-					<div class="card card-body">
-					{{#DadosProntuario}}
-				  <div class="form-row">
-					  
-    <div class="form-group col-md-6">
-		
-        <label for="inputEmail4">Tipo de Alergia</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{NomeAlergia}}'>
-        <label for="inputEmail4">Descrição</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{Descricao}}'>
-        
-      </div>
-	</div>
-	{{/DadosProntuario}}
-	<button type="button" class="btn btn-info">Salvar</button>
-					</div>
-				 </div>
-
-				  <p>
-					<a  class="btn btn-warning btn-lg btn-block" data-toggle="collapse" href="#collapseEmergência" role="button" aria-expanded="false" aria-controls="collapseExample">
-						Emergência
-					</a>
-				 </p>
-				  <div class="collapse" id="collapseEmergência">
-					<div class="card card-body">
-					
-					{{#DadosProntuario}}
-				  <div class="form-row">
-					  
-    <div class="form-group col-md-6">
-		
-        <label for="inputEmail4">Telefone de Emergêcia</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{TelefoneEmergencia}}'>
-        <label for="inputEmail4">Nome Responsável</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{NomeResponsavel}}'>
-        <label for="inputEmail4">Nome Cuidador</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{NomeCuidador}}'>
-        <label for="inputEmail4">Telefone Cuidador</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value='{{TelefoneCuidador}}'>
-         
-      </div>
-	</div>
-	{{/DadosProntuario}}
 
 
 
-					<button type="button" class="btn btn-info">Salvar</button>
-					</div>
-				  </div>
-				  <a href="Home"><b class="fas fa-home"> Voltar</b></a>
-				  
-	   </section>
-	   
-	   
-	 
-	
-	   
-	   
-	   
-	   
-	   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
 	</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
 
 
-   </body>
+</body>
+
 </html>

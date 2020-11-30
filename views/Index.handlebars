@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/IndexCSS.css">
     <script  type="text/javascript"  src="Jquery.js"></script>
     <script  type="text/javascript"  src="Index.js"></script>
+    <script  type="text/javascript"  src="CriaRota.js"></script>
    </head>
    <body>
       
@@ -45,21 +46,15 @@
     <label for="CPF">CPF</label>
     
     <input type="text" class="form-control"  name="CPF" id="numeroCPF" aria-describedby="Insira seu CPF">
-    <small id="AjudaCPF"class="form-text text-muted">Coloque o CPF, ou cadastre-se para entrar</small>
+    <small id="AjudaCPF"class="form-text text-muted">Coloque o CPF, se já foi cadastrado pelo médico</small>
  
    </div>
 
-  <button class="btn btn-light">Entrar</button>
+  <button class="btn btn-warning" onClick="SetCpf()">Entrar</button>
 </form>
    </div>
    </br>
    
-   <div id="google"> 
- 
-	<div class="g-signin2" data-onsuccess="onSignIn">Login</div>
-	
-   </div>
-  
 	  
 	   
 	   
