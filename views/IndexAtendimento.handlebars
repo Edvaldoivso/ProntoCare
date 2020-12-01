@@ -34,6 +34,10 @@
    </p>
    </figcaption>
    </figure>
+   <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+                title="Tooltip on top">
+                <a onclick="LimparDesc()"><i class="fas fa-sign-out-alt">Logout</i></a>
+            </button>
    </div>
 
 
@@ -52,6 +56,7 @@
               <th scope="col">Numero do Atendimento</th>
               <th scope="col">Data do Atendimento</th>
               <th scope="col">Medico/Enfermeiro</th>
+              <th scope="col">Nome</th>
               <th scope="col">Visualizar</th>
             </tr>
           </thead>
@@ -59,15 +64,27 @@
           <tbody>
             <tr>
 
-              <td value="{{id}}">{{id}}</a></td>
-              <td>{{Data}}</td>
-              <td>{{Homologador}}</td>
-              <td>Selecionar</td>
+              <td id="Linha{{id}}" onClick="Elemento({{id}})">{{id}}</a></td>
+              <td  onClick="Elemento({{id}})">{{Data}}</td>
+              <td  onClick="Elemento({{id}})">{{Homologador}}</td>
+              <td  onClick="Elemento({{id}})">{{Nome}}</td>
+              <td onClick="Elemento({{id}})">Selecionar</td>
               
             </tr>
           </tbody>
           {{/each}}
         </table>
+
+  <form  method="POST" action="/NovaConsulta">
+
+              
+                        <label for="inputEmail4"></label>
+                        <input type="text" class="form-control"  name="CPF2" value="2020">
+               
+
+<button type="button" class="btn btn-secondary"  title="Nova Consulta"> Nova Consulta</button>
+</form>
+
 
 
 

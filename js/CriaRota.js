@@ -30,10 +30,18 @@ function Limpar(){
 
 }
 
+
+function LimparDesc(){
+    localStorage.clear();
+    //console.log("Limpo")
+    window.location.href = "http://localhost:8081/PrincipalConsulta";
+
+}
+
 function SetCpf(){
 
-    var CPF = document.getElementById("numeroCPF").value
-    //alert("Vai o CPF já")
+    var CPF = $("#numeroCPF").val()
+    console.log(CPF +"Vai o CPF já")
     localStorage.setItem('CPF',CPF);
 
 }
@@ -73,12 +81,13 @@ function Voltar(){
 
 
 
-$("button").on('click',function(){
-   var This = this.value
-   console.log(This)
-})
 
-
-function validate(this){
-    alert(this)
+function Elemento(id){
+    var Obj = "Linha"+id
+    console.log(Obj + " Obj")
+    var Item =  $("#"+Obj).text()
+    console.log(Item + " O item")
+    var URL = window.location.href =  "http://localhost:8081/DadosAtendimento/"+Item
+    console.log(URL)
 }
+

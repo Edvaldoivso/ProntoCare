@@ -233,7 +233,8 @@ app.get("/IndexAtendimento", function (req, res) {
 
     DadosProntuario.findAll({
         where: {
-            nome:'Teste'
+            //nome:'Teste'
+          
         }
     }).then(function (DadosProntuario) {
         res.render('IndexAtendimento', { DadosProntuario: DadosProntuario })
@@ -318,13 +319,15 @@ app.post("/IndexUpdate", function (req, res) {
 
     }, {
         where: {
-            id: 2
+            Nome:req.body.nome,
+            CPF:req.body.CPF
+            
         }
     }
 
     ).then(function (DadosProntuario) {
         //res.render("IndexAtendimento")
-        res.render('DadosAtendimento')
+        res.render('IndexAtendimento')
     }).catch(function (err) {
         console.log("Tivemos um erro em" + err)
     })
@@ -382,7 +385,7 @@ app.post("/IndexUpdate", function (req, res) {
 
 app.post("/NovaConsulta", function (req, res) {
     DadosProntuario.create({
-        Nome: "Teste",
+        Nome: req.body.nome,
         Consulta: req.body.Consulta,
         Data: req.body.Data,
         Especialidade: req.body.Especialidade,
@@ -466,7 +469,7 @@ app.post("/NovaAlergia", function (req, res) {
 
 
 //--------------------------------------------------------------------------
-
+/*ESTA ROTA É BOA SÓ MUDEI PARA USAR UM FINDALL
 app.post("/AcessarDados", function (req, res) {
     //res.render("IndexAtendimento")
 
@@ -492,6 +495,91 @@ app.post("/AcessarDados", function (req, res) {
 
 })
 
+*/
+
+app.post("/AcessarDados", function (req, res) {
+    //res.render("IndexAtendimento")
+
+    DadosProntuario.findAll({
+        where: {
+            Nome: req.body.nome,
+            CPF: req.body.CPF,
+            
+        }
+    }).then(function (DadosProntuario) {
+        if(DadosProntuario){
+           
+            res.render('IndexAtendimento',{ DadosProntuario: DadosProntuario })
+        }else{
+            res.send("Erro")
+        }
+        
+      
+
+    }).catch(function (err) {
+        console.log("Não Encontrei o " + DadosProntuario + "tive um erro: " + err)    
+    })
+
+
+})
+
+
+//-------------------------------------------------------------------
+
+app.get("/SalvarConsulta", function (req, res) {
+    DadosProntuario.create({
+        NomeAlergia: req.body.NomeAlergia,
+        Descricao: req.body.Descricao,
+        Homologador: req.body.Homologador,
+        DataInclusao: req.body.DataInclusao,
+        Nome: req.body.nome,
+        Consulta: req.body.Consulta,
+        Data: req.body.Data,
+        Especialidade: req.body.Especialidade,
+        Medico: req.body.Medico,
+        NomeHospital: req.body.NomeHospital,
+        RuaHospital: req.body.RuaHospital,
+        CepHospital: req.body.CepHospital,
+        GrupoRisco: req.body.GrupoRisco,
+        PCD: req.body.PCD,
+        DisturbioPsquicos: req.body.DisturbioPsquicos,
+
+    }).then(function (DadosProntuario) {
+        res.render("IndexAtendimento")        
+    }).catch(function (err) {
+        console.log("Tivemos um erro em" + err)
+    })
+
+
+})
+
+//----------------------------------------------------------------
+//Chama a tela de Nova Consulta
+
+
+
+
+
+app.get("/NovaConsulta", function (req, res) {
+    //res.render("IndexAtendimento")
+
+
+  DadosProntuario.findAll({
+
+        where: {
+            CPF: req.body.CPF2
+        }
+    }).then(function (DadosProntuario) {
+        res.render('DadosAtendimento', { DadosProntuario: DadosProntuario })
+        console.log("Valor parametro= " + req.params.CPF2)
+
+
+    }).catch(function (err) {
+        console.log("Tivemos um erro em " + err)
+    })
+
+
+})
 
 
 

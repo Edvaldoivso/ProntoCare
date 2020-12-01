@@ -43,9 +43,10 @@
                 <a href="#Alergias">Central de Alergias</a>
             </button>
             <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                title="Tooltip on top">
-                <a href="http://localhost:8081/IndexAtendimento">Voltar</a>
+                title="Tooltip on top" method="POST" action="/AcessarDados">
+                <a>Voltar</a>
             </button>
+
 
         </div>
         <div id="Prontuario">
@@ -54,10 +55,16 @@
 
 
             <form action="/IndexUpdate" method="post">
+
                 <div class="row">
                     <div class="col">
+                        <label for="inputEmail4">id</label>
+                        <input type="text" class="form-control" placeholder="id" name="id" value="{{id}}">
+                    </div>
+                    <div class="col">
                         <label for="inputEmail4">Paciente:</label>
-                        <input type="text" class="form-control" placeholder="Nome"  value="{{Nome}}" name="nome" id="nome">
+                        <input type="text" class="form-control" placeholder="Nome" value="{{Nome}}" name="nome"
+                            id="nome">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">CPF</label>
@@ -82,7 +89,8 @@
                 <div class="row">
                     <div class="col">
                         <label for="inputEmail4">Fenotipo</label>
-                        <input type="text" class="form-control" placeholder="Fenótipo" value="{{Fenotipo}}" name="Fenotipo">
+                        <input type="text" class="form-control" placeholder="Fenótipo" value="{{Fenotipo}}"
+                            name="Fenotipo">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Peso</label>
@@ -94,7 +102,8 @@
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Sexo</label>
-                        <input type="text" class="form-control" placeholder="Sexo" value="{{SexoBiologico}}" name="Sexo">
+                        <input type="text" class="form-control" placeholder="Sexo" value="{{SexoBiologico}}"
+                            name="Sexo">
                     </div>
                 </div>
 
@@ -110,7 +119,8 @@
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Risco</label>
-                        <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}" name="GrupoRiso">
+                        <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}"
+                            name="GrupoRiso">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
@@ -126,7 +136,8 @@
                 <div class="row">
                     <div class="col">
                         <label for="inputEmail4">GrSanguineo</label>
-                        <input type="text" class="form-control" placeholder="Grupo Sanguineo" value="{{GrSanguineo}}" name="GrSanguineo">
+                        <input type="text" class="form-control" placeholder="Grupo Sanguineo" value="{{GrSanguineo}}"
+                            name="GrSanguineo">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Pressão</label>
@@ -143,6 +154,9 @@
                 <P>ENDEREÇO</P>
 
                 <div class="row">
+
+
+
                     <div class="col">
                         <label for="inputEmail4">Rual</label>
                         <input type="text" class="form-control" placeholder="Cep" value="{{Rua}}" name="Rua">
@@ -166,7 +180,8 @@
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Complemento</label>
-                        <input type="text" class="form-control" placeholder="Complemento" value="{{Complemento}}" name="complemento">
+                        <input type="text" class="form-control" placeholder="Complemento" value="{{Complemento}}"
+                            name="complemento">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Numero</label>
@@ -180,6 +195,9 @@
                 <p> Contatos</p>
 
                 <div class="row">
+
+
+
                     <div class="col">
                         <label for="inputEmail4">Telefone de Emergência</label>
                         <input type="text" class="form-control" placeholder="Telefone Emergencia"
@@ -201,10 +219,11 @@
                 <div class="row">
                     <div class="col">
                         <label for="inputEmail4">e-mail Opcional</label>
-                        <input type="text" class="form-control" placeholder="e-mail Opcional" value="{{emailOpcional}}" name="emailOpcional">
+                        <input type="text" class="form-control" placeholder="e-mail Opcional" value="{{emailOpcional}}"
+                            name="emailOpcional">
                     </div>
-                   
-                  </div>
+
+                </div>
 
                 </br>
 
@@ -218,7 +237,8 @@
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Nome Cuidador</label>
-                        <input type="text" class="form-control" placeholder="Cuidador" value="{{NomeCuidador}}" name="Cuidador">
+                        <input type="text" class="form-control" placeholder="Cuidador" value="{{NomeCuidador}}"
+                            name="Cuidador">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Telefone Responsável/Cuidador</label>
@@ -233,7 +253,7 @@
 
 
                 <button type="button submit" class="btn btn-info">Atualizar os Dados Prontuario</button>
-             </form>
+            </form>
 
             {{/DadosProntuario}}
 
@@ -244,21 +264,29 @@
         <div id="Consultas">
 
             <h3>Consultas</h3>
-            
+
 
 
 
 
             <form method="post" action="/NovaConsulta">
-            {{#DadosProntuario}}
+                {{#DadosProntuario}}
                 <div class="row">
+
+
+                    
                     <div class="col">
                         <label for="inputEmail4">NºConsulta</label>
-                        <input type="text" class="form-control"  value="{{id}}" name="id">
+                        <input type="text" class="form-control" value="{{id}}" name="id">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">CPF</label>
+                        <input type="text" class="form-control" value="{{CPF}}" name="CPF">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Tipo de Consulta</label>
-                        <input type="text" class="form-control" placeholder="Consultas" value="{{Consulta}}" name="Consulta">
+                        <input type="text" class="form-control" placeholder="Consultas" value="{{Consulta}}"
+                            name="Consulta">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Data Consulta</label>
@@ -266,7 +294,8 @@
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Especialidade</label>
-                        <input type="text" class="form-control" placeholder="Especialidade" value="{{Especialidade}}" name="Especialidade">
+                        <input type="text" class="form-control" placeholder="Especialidade" value="{{Especialidade}}"
+                            name="Especialidade">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Medico</label>
@@ -279,50 +308,56 @@
                 <div class="row">
                     <div class="col">
                         <label for="inputEmail4">Hospital</label>
-                        <input type="text" class="form-control" placeholder="Hospital" value="{{NomeHospital}}" name="NomeHospital">
+                        <input type="text" class="form-control" placeholder="Hospital" value="{{NomeHospital}}"
+                            name="NomeHospital">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Logradouro Hospital</label>
-                        <input type="text" class="form-control" placeholder="Logradouro" value="{{RuaHospital}}" name="RuaHospital">
+                        <input type="text" class="form-control" placeholder="Logradouro" value="{{RuaHospital}}"
+                            name="RuaHospital">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Numero</label>
-                        <input type="text" class="form-control" placeholder="Numero" value="{{NumeroHospital}}" name="NumeroHospital">
+                        <input type="text" class="form-control" placeholder="Numero" value="{{NumeroHospital}}"
+                            name="NumeroHospital">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Bairro</label>
-                        <input type="text" class="form-control" placeholder="Bairro" value="{{BairroHospital}}" name="BairroHospital">
+                        <input type="text" class="form-control" placeholder="Bairro" value="{{BairroHospital}}"
+                            name="BairroHospital">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="inputEmail4">Cep Hospital</label>
-                        <input type="text" class="form-control" placeholder="Cep" value="{{CepHospital}}" name="CepHospital">
+                        <input type="text" class="form-control" placeholder="Cep" value="{{CepHospital}}"
+                            name="CepHospital">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Risco</label>
-                        <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}" name="GrupoRisco">
+                        <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}"
+                            name="GrupoRisco">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
-                        <input type="text" class="form-control" placeholder="Disturbios" value="{{DisturbioPsquicos}}" name="DisturbioPsiquico">
+                        <input type="text" class="form-control" placeholder="Disturbios" value="{{DisturbioPsquicos}}"
+                            name="DisturbioPsiquico">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">PCD</label>
                         <input type="text" class="form-control" placeholder="PCD" value="{{PCD}}" name="PCD">
                     </div>
-                </div>               
+                </div>
                 </br>
                 {{/DadosProntuario}}
                 <button type="button submit" class="btn btn-info">Registrar Consulta</button>
-    	        
-                <button type="button" class="btn btn-success">Incluir</button>
 
+               
             </form>
 
 
 
-            
+
 
         </div>
 
@@ -331,28 +366,37 @@
             <h3>Vacinas</h3>
 
 
-            
 
-                
+
+
             <form method="post" action="/NovaVacina">
                 {{#DadosProntuario}}
                 <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">id</label>
+                        <input type="text" class="form-control" placeholder="id" value="{{id}}" name="id">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">CPF</label>
+                        <input type="text" class="form-control" placeholder="CPF" value="{{CPF}}" name="CPF">
+                    </div>
                     <div class="col">
                         <label for="inputEmail4">Descrição da Vacina</label>
                         <input type="text" class="form-control" placeholder="Vacinas" value="{{Vacina}}" name="Vacina">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Data Validade</label>
-                        <input type="text" class="form-control" placeholder="DataValidade" value="{{Validade}}" name="Validade">
+                        <input type="text" class="form-control" placeholder="DataValidade" value="{{Validade}}"
+                            name="Validade">
                     </div>
                 </div>
                 {{/DadosProntuario}}
                 </br>
-                <button type="button submit" class="btn btn-info">Registrar Consulta</button>
+                <button type="button submit" class="btn btn-info">Registrar Vacinação</button>
             </form>
 
 
-            
+
 
         </div>
 
@@ -361,11 +405,19 @@
 
             <h3>Definir Lembretes</h3>
 
-            
+
 
             <form>
                 {{#DadosProntuario}}
                 <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">id</label>
+                        <input type="text" class="form-control" placeholder="id" value="{{id}}">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">CPF</label>
+                        <input type="text" class="form-control" placeholder="CPF" value="{{CPF}}">
+                    </div>
                     <div class="col">
                         <label for="inputEmail4">Tipo de Lembrete</label>
                         <input type="text" class="form-control" placeholder="Alertas" value="Alertas">
@@ -385,18 +437,18 @@
                 </div>
                 </br>
                 {{/DadosProntuario}}
-                <button type="button submit" class="btn btn-info">Inserir Lembreta</button>
+                <button type="button submit" class="btn btn-info">Inserir Lembrete</button>
             </form>
 
-            
+
 
         </div>
 
-        <div id="Alergias"  method="post" action="/NovaVacina">
+        <div id="Alergias" method="post" action="/NovaVacina">
 
             <h3>Alergias</h3>
 
-            
+
 
 
 
@@ -404,9 +456,15 @@
                 {{#DadosProntuario}}
 
                 <div class="row">
+                   
+                    
                     <div class="col">
-                        <label for="inputEmail4">NºAlergia</label>
+                        <label for="inputEmail4">id</label>
                         <input type="text" class="form-control" value="{{id}}">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">CPF</label>
+                        <input type="text" class="form-control" placeholder="CPF" value="{{CPF}}">
                     </div>
                     <div class="col">
                         <label for="inputEmail4">Tipo de Alergia</label>
@@ -426,12 +484,12 @@
                     </div>
                 </div>
                 </br>
-                 {{/DadosProntuario}}
+                {{/DadosProntuario}}
 
-                <button type="button submit" class="btn btn-info">Inserir Controle</button>
+                <button type="button submit" class="btn btn-info">Salvar  Alergia</button>
             </form>
 
-           
+
 
         </div>
 
