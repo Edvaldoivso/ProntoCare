@@ -227,7 +227,28 @@ var DadosProntuario = db.sequelize.define('Prontuario', {
     Validade: {
         type: db.Sequelize.DATE,
         field: 'Date'
-    }
+    },
+    
+    TituloLembrete: {
+        type: db.Sequelize.STRING,
+        field: 'TituloLembrete'
+    },
+
+    Descricao: {
+        type: db.Sequelize.STRING,
+        field: 'Descricao'
+    },
+
+    TipoLembrete: {
+        type: db.Sequelize.STRING,
+        field: 'TipoLembrete'
+    },
+    DataLembrete: {
+        type: db.Sequelize.DATEONLY,
+        field: 'DataLembrete'
+    },
+    
+    
 
 
 
@@ -245,12 +266,12 @@ var DadosProntuario = db.sequelize.define('Prontuario', {
 /*
 DadosProntuario.create({
     
-    Nome:"SEGUNDO PAC",
+    Nome:"Edvaldo",
     senha:"TESTE",
-    CPF:"205.898.000-00",
-    RG:"246.000.456.x",
+    CPF:"2020",
+    RG:"246.000.111-2",
     Idade:22,
-    Fenotipo:"2",
+    Fenotipo:"1",
     Peso:"60",
     Altura:"1.50",
     SexoBiologico:"FEMININO",
@@ -275,15 +296,19 @@ DadosProntuario.create({
     NomeResponsavel:"Carlota Joaquina",
     NomeCuidador:"Ozorio",
     Vacina:"BCG",
-    Validade:55152588
+    Validade:55152588,
+    TipoLembrete:'ENTREGA NO PRAZO',
+    Titulo:'ENTREGA DA N2',
+    DataLembrete:"2020-08-12",
+    Descricao:"ESTE É O COMPROMISSO DE ENTREGA DO APP E DO BANCO E DA WEB JUNTOS SEM ESQUECER O VIDE!",
 
     
     })
     
-    */
+    
 
 
-
+*/
 
 
 module.exports = DadosProntuario;

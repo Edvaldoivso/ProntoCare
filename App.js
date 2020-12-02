@@ -63,23 +63,23 @@ app.get("/Index", function (req, res) {
 
     app.post('/Login', function (req, res) {
 
-        InsertLogin.findOne({
+        DadosProntuario.findOne({
 
 
             where: {
-                senha: req.body.senha,
+                nome: req.body.senha,
                 cpf: req.body.CPF
             }
-        }).then(function (InsertLogin) {
-            if (InsertLogin) {
-                res.render("Home", { InsertLogin: InsertLogin })
+        }).then(function (DadosProntuario) {
+            if (DadosProntuario) {
+                res.render("Home", { DadosProntuario: DadosProntuario })
             } else {
 
                 res.render("Erro")
             }
 
         }).catch(function (err) {
-            console.log("Não Encontrei o " + InsertLogin + "tive um erro: " + err)
+            console.log("Não Encontrei o " + DadosProntuario+ "tive um erro: " + err)
 
         })
 
@@ -469,7 +469,7 @@ app.post("/NovaAlergia", function (req, res) {
 
 
 //--------------------------------------------------------------------------
-/*ESTA ROTA É BOA SÓ MUDEI PARA USAR UM FINDALL
+
 app.post("/AcessarDados", function (req, res) {
     //res.render("IndexAtendimento")
 
@@ -495,15 +495,16 @@ app.post("/AcessarDados", function (req, res) {
 
 })
 
-*/
+//---------------------------------------------------------------------
 
-app.post("/AcessarDados", function (req, res) {
+
+app.get("/VoltarDados/:CPF", function (req, res) {
     //res.render("IndexAtendimento")
 
     DadosProntuario.findAll({
         where: {
-            Nome: req.body.nome,
-            CPF: req.body.CPF,
+            
+            CPF:req.params.CPF,
             
         }
     }).then(function (DadosProntuario) {
@@ -560,18 +561,20 @@ app.get("/SalvarConsulta", function (req, res) {
 
 
 
-app.get("/NovaConsulta", function (req, res) {
+app.get("/NovaConsulta/:CPF", function (req, res) {
     //res.render("IndexAtendimento")
 
 
-  DadosProntuario.findAll({
+  DadosProntuario.findOne({
 
         where: {
-            CPF: req.body.CPF2
+          
+            cpf:req.params.CPF
         }
+
     }).then(function (DadosProntuario) {
-        res.render('DadosAtendimento', { DadosProntuario: DadosProntuario })
-        console.log("Valor parametro= " + req.params.CPF2)
+        res.render('DadosAtendimentoSalvar', { DadosProntuario: DadosProntuario })
+        console.log("Valor parametro= " + req.params.CPF)
 
 
     }).catch(function (err) {

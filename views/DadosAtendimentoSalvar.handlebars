@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Prontuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/Atendimento.css">
+    <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script>
+    <script  type="text/javascript"  src="CriaRota.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+    <div id="Corpo">
+
+
+
+        <div id="Itens">
+            
+  <div id="Corpo">
+
+   <div id="Logo">
+   <figure>
+   <img class="LogoPronto" src="/Logo.png">
+   
+   </figure>
+    
+   <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                title="Tooltip on top">
+                <a onclick="LimparDesc()">Cancelar</a>
+            </button>
+   </div>
+           
+
+
+        </div>
+        </br>
+        <div id="Prontuario">
+            <h3>Prontuario</h3>
+            {{#DadosProntuario}}
+
+
+            <form action="SalvarConsulta" method="post">
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">id</label>
+                        <input type="text" class="form-control"  name="id" value="{{id}}" readonly>
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Nome Paciente:</label>
+                        <input type="text" class="form-control"  value="{{Nome}}" name="nome"
+                            id="nome">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">CPF</label>
+                        <input type="text" class="form-control"  name="CPF" value="{{CPF}}" readonly>
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">RG</label>
+                        <input type="text" class="form-control"  value="{{RG}}" name="RG">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Idade</label>
+                        <input type="text" class="form-control"  value="{{Idade}}" name="Idade">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">Fenotipo</label>
+                        <input type="text" class="form-control"  value="{{Fenotipo}}"
+                            name="Fenotipo">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Peso</label>
+                        <input type="text" class="form-control"  value="{{Peso}}" name="Peso">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Altura</label>
+                        <input type="text" class="form-control"  value="{{Altura}}" name="Altura">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Sexo</label>
+                        <input type="text" class="form-control"  value="{{SexoBiologico}}"
+                            name="Sexo">
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+
+
+                    <div class="col">
+                        <label for="inputEmail4">Genero</label>
+                        <input type="text" class="form-control"  value="{{Genero}}">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Risco</label>
+                        <input type="text" class="form-control"  value="{{GrupoRisco}}"
+                            name="GrupoRiso">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
+                        <input type="text" class="form-control"  value="{{DisturbioPsquicos}}">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4"></label>
+                        <input type="text" class="form-control"  value="{{PCD}}">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">GrSanguineo</label>
+                        <input type="text" class="form-control" value="{{GrSanguineo}}"
+                            name="GrSanguineo">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Pressão</label>
+                        <input type="text" class="form-control"  value="{{Pressao}}" name="Pressao">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Doador</label>
+                        <input type="text" class="form-control"  value="{{Doador}}" name="Doador">
+                    </div>
+                </div>
+
+                </br>
+
+                <h6>ENDEREÇO</h6>
+
+                <div class="row">
+
+
+
+                    <div class="col">
+                        <label for="inputEmail4">Rual</label>
+                        <input type="text" class="form-control"  value="{{Rua}}" name="Rua">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Bairro</label>
+                        <input type="text" class="form-control"  value="{{Bairro}}" name="Bairro">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Cidade</label>
+                        <input type="text" class="form-control"  value="{{Cidade}}" name="Cidade">
+                    </div>
+                </div>
+
+                </br>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">Cep</label>
+                        <input type="text" class="form-control"  value="{{Cep}}" name="Cep">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Complemento</label>
+                        <input type="text" class="form-control"  value="{{Complemento}}"
+                            name="complemento">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Numero</label>
+                        <input type="text" class="form-control"  value="{{Numero}}" name="numero">
+                    </div>
+                </div>
+
+                </br>
+
+
+                <h6> Contatos</h6>
+
+                <div class="row">
+
+
+
+                    <div class="col">
+                        <label for="inputEmail4">Telefone de Emergência</label>
+                        <input type="text" class="form-control" 
+                            value="{{TelefoneEmergencia}}">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">e-mail</label>
+                        <input type="text" class="form-control"  value="{{email}}" name="email">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Telefone de Recados</label>
+                        <input type="text" class="form-control" 
+                            value="{{TelefoneRecado}}">
+                    </div>
+                </div>
+
+                </br>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">e-mail Opcional</label>
+                        <input type="text" class="form-control"  value="{{emailOpcional}}"
+                            name="emailOpcional">
+                    </div>
+
+                </div>
+
+                </br>
+
+                <h6>Cuidador/Responsável</h6>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">Nome Responsável</label>
+                        <input type="text" class="form-control" 
+                            value="{{NomeResponsavel}}" name="NomeResponsavel">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Nome Cuidador</label>
+                        <input type="text" class="form-control"  value="{{NomeCuidador}}"
+                            name="Cuidador">
+                    </div>
+                    <div class="col">
+                        <label for="inputEmail4">Telefone Responsável/Cuidador</label>
+                        <input type="text" class="form-control" 
+                            value="{{TelefoneCuidador}}" name="TelefoneCuidador">
+                    </div>
+                </div>
+
+                </br>
+
+
+
+
+
+
+        </div>
+
+
+        <div id="Consultas">
+
+            <h3>Consultas</h3>
+
+
+
+
+
+
+
+            <div class="row">
+
+
+
+
+                <div class="col">
+                    <label for="inputEmail4">Tipo de Consulta</label>
+                    <input type="text" class="form-control"  value="{{Consulta}}"
+                        name="ConsultaInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Data Consulta</label>
+                    <input type="text" class="form-control"  value="{{Data}}" name="DataInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Especialidade</label>
+                    <input type="text" class="form-control"  value="{{Especialidade}}"
+                        name="EspecialidadeInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Medico</label>
+                    <input type="text" class="form-control" value="{{Medico}}" name="MedicoInsert">
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col">
+                    <label for="inputEmail4">Hospital</label>
+                    <input type="text" class="form-control"  value="{{NomeHospital}}"
+                        name="NomeHospitalInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Logradouro Hospital</label>
+                    <input type="text" class="form-control"  value="{{RuaHospital}}"
+                        name="RuaHospitalInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Numero</label>
+                    <input type="text" class="form-control"  value="{{NumeroHospital}}"
+                        name="NumeroHospitalInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Bairro</label>
+                    <input type="text" class="form-control"  value="{{BairroHospital}}"
+                        name="BairroHospitalInsert">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="inputEmail4">Cep Hospital</label>
+                    <input type="text" class="form-control"  value="{{CepHospital}}"
+                        name="CepHospitalInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Risco</label>
+                    <input type="text" class="form-control"  value="{{GrupoRisco}}"
+                        name="GrupoRiscoInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
+                    <input type="text" class="form-control"  value="{{DisturbioPsquicos}}"
+                        name="DisturbioPsiquicoInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">PCD</label>
+                    <input type="text" class="form-control"  value="{{PCD}}" name="PCDInsert">
+                </div>
+            </div>
+            </br>
+
+
+
+
+
+
+
+
+        </div>
+
+        <div id="Vacinas">
+
+            <h3>Vacinas</h3>
+
+
+
+
+
+
+
+            <div class="row">
+
+                <div class="col">
+                    <label for="inputEmail4">Descrição da Vacina</label>
+                    <input type="text" class="form-control"  value="{{Vacina}}" name="VacinaInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Data Validade</label>
+                    <input type="text" class="form-control"  value="{{Validade}}"
+                        name="ValidadeInsert">
+                </div>
+            </div>
+
+            </br>
+
+
+
+
+
+        </div>
+
+
+        <div id="Alertas">
+
+            <h3>Definir Lembretes</h3>
+
+
+
+
+            <div class="row">
+
+                <div class="col">
+                    <label for="inputEmail4">Tipo de Lembrete</label>
+                    <input type="text" class="form-control"  name="AlertasInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Hora:</label>
+                    <input type="text" class="form-control"  name="HoraInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Data:</label>
+                    <input type="text" class="form-control"  name="DataInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Descrição:</label>
+                    <input type="text" class="form-control"  name="DescricaoInsert">
+                </div>
+            </div>
+            </br>
+
+
+
+
+
+        </div>
+
+        <div id="Alergias">
+
+            <h3>Alergias</h3>
+
+
+
+
+
+
+            <div class="row">
+
+                <div class="col">
+                    <label for="inputEmail4">Tipo de Alergia</label>
+                    <input type="text" class="form-control"  value="{{NomeAlergia}}" name="NomeAlergiaInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Descricao:</label>
+                    <input type="text" class="form-control"  value="{{Descricao}}" name="DescricaoInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">Homologador:</label>
+                    <input type="text" class="form-control"  value="{{Homologador}}" name="HomologadorInsert">
+                </div>
+                <div class="col">
+                    <label for="inputEmail4">DataInclusao:</label>
+                    <input type="text" class="form-control"  value="{{DataInclusao}}" name="DataInclusaoInsert">
+                </div>
+            </div>
+            </br>
+            {{/DadosProntuario}}
+
+            <button type="button submit" class="btn btn-info">Incluir Nova Consulta</button>
+            </form>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

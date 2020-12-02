@@ -28,19 +28,20 @@
    <img class="LogoPronto" src="/Logo.png">
    
    <figcaption class="legenda">
-      
+     
 	<p>
       Pronto Care Atendimento Médico
    </p>
    </figcaption>
    </figure>
+    
    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
                 title="Tooltip on top">
                 <a onclick="LimparDesc()"><i class="fas fa-sign-out-alt">Logout</i></a>
             </button>
    </div>
 
-
+</br>
       
 
       <div id="Atendimentos">
@@ -75,14 +76,14 @@
           {{/each}}
         </table>
 
-  <form  method="POST" action="/NovaConsulta">
+  <form>
 
               
                         <label for="inputEmail4"></label>
-                        <input type="text" class="form-control"  name="CPF2" value="2020">
+                        <input type="text" class="form-control"  name="CPF2" hidden>
                
 
-<button type="button" class="btn btn-secondary"  title="Nova Consulta"> Nova Consulta</button>
+<button type="button" class="btn btn-secondary"  title="Nova Consulta" onClick="IniciaConsulta()"> Nova Consulta</button>
 </form>
 
 
@@ -96,129 +97,7 @@
 
 
       </br>
-      <section id="Graficos">
-
-
-
-
-        <div id="accordion">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                  aria-controls="collapseOne">
-                  Grafico 1
-                </button>
-              </h5>
-            </div>
-
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-              <div class="card-body">
-                <div id="curve_chart" style="width: 100%; height: 300px">Histórico de Saúde
-
-                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                  <script type="text/javascript">
-                    google.charts.load('current', { 'packages': ['corechart'] });
-                    google.charts.setOnLoadCallback(drawChart);
-
-                    function drawChart() {
-                      var data = google.visualization.arrayToDataTable([
-                        ['Temperatura', 'Pressão', 'Hemoglobina'],
-                        ['2004', 1000, 400],
-                        ['2005', 1170, 460],
-                        ['2006', 660, 1120],
-                        ['2007', 1030, 1600]
-                      ]);
-
-                      var options = {
-                        title: 'Balanço Sanguineo',
-                        curveType: 'function',
-                        legend: { position: 'bottom' }
-                      };
-
-                      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-                      chart.draw(data, options);
-                    }
-                  </script>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                  aria-expanded="false" aria-controls="collapseTwo">
-                  Grafico 2
-                </button>
-              </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-              <div class="card-body">
-                <div id="Peso" style="width: 100%; height: 300px">
-
-
-                  <script type="text/javascript">
-                    google.charts.load('current', { 'packages': ['corechart'] });
-                    google.charts.setOnLoadCallback(drawChart);
-
-                    function drawChart() {
-                      var data = google.visualization.arrayToDataTable([
-                        ['Massa Corporea', 'Massa Magra', 'Massa Gorda'],
-                        ['2004', 1000, 40],
-                        ['2005', 1170, 460],
-                        ['2006', 400, 6020],
-                        ['2007', 2030, 1000]
-                      ]);
-
-                      var options = {
-                        title: 'Controle de Peso',
-                        curveType: 'function',
-                        legend: { position: 'bottom' }
-                      };
-
-                      var chart = new google.visualization.LineChart(document.getElementById('Peso'));
-
-                      chart.draw(data, options);
-                    }
-                  </script>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-                  aria-expanded="false" aria-controls="collapseThree">
-                  Grafico 3
-                </button>
-              </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-              <div class="card-body">
-                Pode Inserir um tipo diferente de grafico aqui!!
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-        </br>
-
-
-
-
-
-
-
-      </section>
-
+      
 
 
 

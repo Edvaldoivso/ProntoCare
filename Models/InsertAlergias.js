@@ -41,14 +41,14 @@ var DadosAlergia = db.sequelize.define('alergias',{
 
 //DadosAlergia.sync({force:true})
 
-
 /*
+
 DadosAlergia.create({
 
     NomeAlergia:"Camarão",
     Descricao:"Alergia a camarão",
     Homologador:"DRº Vanut",
-   // DataInclusao:"",
+    DataInclusao:"2020-10-05",
 
 })
 */

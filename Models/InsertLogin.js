@@ -66,12 +66,12 @@ console.log("Não Encontrei o "+SelectUser + "tive um erro: "+err)
 
 /*
 InsertLogin.create({
-    cpf:'2020',
-    senha:'Teste'
+    cpf:'417.172.308-65',
+    senha:'Edvaldo'
     
     })
-    
-   */
+*/
+   
     
 
 

@@ -15,5 +15,21 @@
 	height:5%;
 	padding: 5%;
 	
-
 }
+
+   
+a:link{
+	color:#ff0000
+  }
+  
+  a:visited{
+	color:#fff200
+  }
+  
+  a:hover{
+	color:#ffffff
+  }
+  
+  a:active{
+	color:#00fff7
+  }

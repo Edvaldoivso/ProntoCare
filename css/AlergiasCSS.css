@@ -34,3 +34,21 @@ margin-top:80%;
 	
 
 }
+
+
+   
+a:link{
+	color:#ff0000
+  }
+  
+  a:visited{
+	color:#fff200
+  }
+  
+  a:hover{
+	color:#ffffff
+  }
+  
+  a:active{
+	color:#00fff7
+  }

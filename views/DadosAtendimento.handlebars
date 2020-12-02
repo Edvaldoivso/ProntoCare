@@ -9,7 +9,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/Atendimento.css">
     <script src="https://kit.fontawesome.com/020806f02c.js" crossorigin="anonymous"></script>
-
+    <script  type="text/javascript"  src="CriaRota.js"></script>
 
 
 
@@ -19,481 +19,455 @@
 
 
 
+
     <div id="Corpo">
 
+
         <div id="Itens">
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right"
-                title="Tooltip on right">
-                <a href="#Prontuario">Prontuario</a>
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
-                title="Tooltip on bottom">
-                <a href="#Consultas">Consultas</a>
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left"
-                title="Tooltip on left">
-                <a href="#Vacinas">Vacinas</a>
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                title="Tooltip on top">
-                <a href="#Alertas">Central de Alertas</a>
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                title="Tooltip on top">
-                <a href="#Alergias">Central de Alergias</a>
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                title="Tooltip on top" method="POST" action="/AcessarDados">
+            
+   <div id="Logo">
+   <figure>
+   <img class="LogoPronto" src="/Logo.png">
+   
+   <figcaption class="legenda">
+     
+	<p>
+      Registro de Consulta
+   </p>
+   </figcaption>
+   </figure>
+    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+                title="Tooltip on top" onclick="VoltarRota()">
                 <a>Voltar</a>
             </button>
+   
+   </div>
+
+            
+</br>
 
 
-        </div>
-        <div id="Prontuario">
-            <h3>Prontuario</h3>
-            {{#DadosProntuario}}
-
-
-            <form action="/IndexUpdate" method="post">
-
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">id</label>
-                        <input type="text" class="form-control" placeholder="id" name="id" value="{{id}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Paciente:</label>
-                        <input type="text" class="form-control" placeholder="Nome" value="{{Nome}}" name="nome"
-                            id="nome">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">CPF</label>
-                        <input type="text" class="form-control" placeholder="CPF" name="CPF" value="{{CPF}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">RG</label>
-                        <input type="text" class="form-control" placeholder="RG" value="{{RG}}" name="RG">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Idade</label>
-                        <input type="text" class="form-control" placeholder="Idade" value="{{Idade}}" name="Idade">
-                    </div>
-                </div>
-
-
-
-
-
-
-
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">Fenotipo</label>
-                        <input type="text" class="form-control" placeholder="Fenótipo" value="{{Fenotipo}}"
-                            name="Fenotipo">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Peso</label>
-                        <input type="text" class="form-control" placeholder="Peso" value="{{Peso}}" name="Peso">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Altura</label>
-                        <input type="text" class="form-control" placeholder="Altura" value="{{Altura}}" name="Altura">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Sexo</label>
-                        <input type="text" class="form-control" placeholder="Sexo" value="{{SexoBiologico}}"
-                            name="Sexo">
-                    </div>
-                </div>
-
-
-
-
-                <div class="row">
-
-
-                    <div class="col">
-                        <label for="inputEmail4">Genero</label>
-                        <input type="text" class="form-control" placeholder="Genero" value="{{Genero}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Risco</label>
-                        <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}"
-                            name="GrupoRiso">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
-                        <input type="text" class="form-control" placeholder="Disturbios" value="{{DisturbioPsquicos}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4"></label>
-                        <input type="text" class="form-control" placeholder="PCD" value="{{PCD}}">
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">GrSanguineo</label>
-                        <input type="text" class="form-control" placeholder="Grupo Sanguineo" value="{{GrSanguineo}}"
-                            name="GrSanguineo">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Pressão</label>
-                        <input type="text" class="form-control" placeholder="Presão" value="{{Pressao}}" name="Pressao">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Doador</label>
-                        <input type="text" class="form-control" placeholder="Doador" value="{{Doador}}" name="Doador">
-                    </div>
-                </div>
-
-                </br>
-
-                <P>ENDEREÇO</P>
-
-                <div class="row">
-
-
-
-                    <div class="col">
-                        <label for="inputEmail4">Rual</label>
-                        <input type="text" class="form-control" placeholder="Cep" value="{{Rua}}" name="Rua">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Bairro</label>
-                        <input type="text" class="form-control" placeholder="Bairro" value="{{Bairro}}" name="Bairro">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Cidade</label>
-                        <input type="text" class="form-control" placeholder="Cidade" value="{{Cidade}}" name="Cidade">
-                    </div>
-                </div>
-
-                </br>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">Cep</label>
-                        <input type="text" class="form-control" placeholder="Cep" value="{{Cep}}" name="Cep">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Complemento</label>
-                        <input type="text" class="form-control" placeholder="Complemento" value="{{Complemento}}"
-                            name="complemento">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Numero</label>
-                        <input type="text" class="form-control" placeholder="Numero" value="{{Numero}}" name="numero">
-                    </div>
-                </div>
-
-                </br>
-
-
-                <p> Contatos</p>
-
-                <div class="row">
-
-
-
-                    <div class="col">
-                        <label for="inputEmail4">Telefone de Emergência</label>
-                        <input type="text" class="form-control" placeholder="Telefone Emergencia"
-                            value="{{TelefoneEmergencia}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">e-mail</label>
-                        <input type="text" class="form-control" placeholder="e-mail" value="{{email}}" name="email">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Telefone de Recados</label>
-                        <input type="text" class="form-control" placeholder="Telefone Recados"
-                            value="{{TelefoneRecado}}">
-                    </div>
-                </div>
-
-                </br>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">e-mail Opcional</label>
-                        <input type="text" class="form-control" placeholder="e-mail Opcional" value="{{emailOpcional}}"
-                            name="emailOpcional">
-                    </div>
-
-                </div>
-
-                </br>
-
-                <p>Cuidador/Responsável</p>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">Nome Responsável</label>
-                        <input type="text" class="form-control" placeholder="Telefone Emergencia"
-                            value="{{NomeResponsavel}}" name="NomeResponsavel">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Nome Cuidador</label>
-                        <input type="text" class="form-control" placeholder="Cuidador" value="{{NomeCuidador}}"
-                            name="Cuidador">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Telefone Responsável/Cuidador</label>
-                        <input type="text" class="form-control" placeholder="Telefone Cuidador Responsável"
-                            value="{{TelefoneCuidador}}" name="TelefoneCuidador">
-                    </div>
-                </div>
-
-                </br>
-
-
-
-
-                <button type="button submit" class="btn btn-info">Atualizar os Dados Prontuario</button>
-            </form>
-
-            {{/DadosProntuario}}
-
-
-        </div>
-
-
-        <div id="Consultas">
-
-            <h3>Consultas</h3>
-
-
-
-
-
-            <form method="post" action="/NovaConsulta">
+            <div id="Prontuario">
+                <h3>Prontuario</h3>
                 {{#DadosProntuario}}
-                <div class="row">
 
 
-                    
-                    <div class="col">
-                        <label for="inputEmail4">NºConsulta</label>
-                        <input type="text" class="form-control" value="{{id}}" name="id">
+                <form action="/IndexUpdate" method="post">
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">id</label>
+                            <input type="text" class="form-control"  name="id" value="{{id}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Paciente:</label>
+                            <input type="text" class="form-control" value="{{Nome}}" name="nome"
+                                id="nome">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">CPF</label>
+                            <input type="text" class="form-control"  name="CPF" value="{{CPF}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">RG</label>
+                            <input type="text" class="form-control" value="{{RG}}" name="RG">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Idade</label>
+                            <input type="text" class="form-control"  value="{{Idade}}" name="Idade">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">CPF</label>
-                        <input type="text" class="form-control" value="{{CPF}}" name="CPF">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Tipo de Consulta</label>
-                        <input type="text" class="form-control" placeholder="Consultas" value="{{Consulta}}"
-                            name="Consulta">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Data Consulta</label>
-                        <input type="text" class="form-control" placeholder="Data" value="{{Data}}" name="Data">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Especialidade</label>
-                        <input type="text" class="form-control" placeholder="Especialidade" value="{{Especialidade}}"
-                            name="Especialidade">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Medico</label>
-                        <input type="text" class="form-control" placeholder="Medico" value="{{Medico}}" name="Medico">
-                    </div>
-                </div>
 
 
 
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">Hospital</label>
-                        <input type="text" class="form-control" placeholder="Hospital" value="{{NomeHospital}}"
-                            name="NomeHospital">
+
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Fenotipo</label>
+                            <input type="text" class="form-control"  value="{{Fenotipo}}"
+                                name="Fenotipo">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Peso</label>
+                            <input type="text" class="form-control"  value="{{Peso}}" name="Peso">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Altura</label>
+                            <input type="text" class="form-control"  value="{{Altura}}"
+                                name="Altura">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Sexo</label>
+                            <input type="text" class="form-control" value="{{SexoBiologico}}"
+                                name="Sexo">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">Logradouro Hospital</label>
-                        <input type="text" class="form-control" placeholder="Logradouro" value="{{RuaHospital}}"
-                            name="RuaHospital">
+
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Genero</label>
+                            <input type="text" class="form-control"  value="{{Genero}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Risco</label>
+                            <input type="text" class="form-control"  value="{{GrupoRisco}}"
+                                name="GrupoRiso">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
+                            <input type="text" class="form-control" 
+                                value="{{DisturbioPsquicos}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4"></label>
+                            <input type="text" class="form-control"  value="{{PCD}}">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">Numero</label>
-                        <input type="text" class="form-control" placeholder="Numero" value="{{NumeroHospital}}"
-                            name="NumeroHospital">
+
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">GrSanguineo</label>
+                            <input type="text" class="form-control" 
+                                value="{{GrSanguineo}}" name="GrSanguineo">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Pressão</label>
+                            <input type="text" class="form-control"  value="{{Pressao}}"
+                                name="Pressao">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Doador</label>
+                            <input type="text" class="form-control"  value="{{Doador}}"
+                                name="Doador">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">Bairro</label>
-                        <input type="text" class="form-control" placeholder="Bairro" value="{{BairroHospital}}"
-                            name="BairroHospital">
+
+                    </br>
+
+                    <P>ENDEREÇO</P>
+
+                    <div class="row">
+
+
+
+                        <div class="col">
+                            <label for="inputEmail4">Rual</label>
+                            <input type="text" class="form-control"  value="{{Rua}}" name="Rua">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Bairro</label>
+                            <input type="text" class="form-control"  value="{{Bairro}}"
+                                name="Bairro">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Cidade</label>
+                            <input type="text" class="form-control"  value="{{Cidade}}"
+                                name="Cidade">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">Cep Hospital</label>
-                        <input type="text" class="form-control" placeholder="Cep" value="{{CepHospital}}"
-                            name="CepHospital">
+
+                    </br>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Cep</label>
+                            <input type="text" class="form-control"  value="{{Cep}}" name="Cep">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Complemento</label>
+                            <input type="text" class="form-control"  value="{{Complemento}}"
+                                name="complemento">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Numero</label>
+                            <input type="text" class="form-control"  value="{{Numero}}"
+                                name="numero">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">Risco</label>
-                        <input type="text" class="form-control" placeholder="Risco" value="{{GrupoRisco}}"
-                            name="GrupoRisco">
+
+                    </br>
+
+
+                    <p> Contatos</p>
+
+                    <div class="row">
+
+
+
+                        <div class="col">
+                            <label for="inputEmail4">Telefone de Emergência</label>
+                            <input type="text" class="form-control" 
+                                value="{{TelefoneEmergencia}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">e-mail</label>
+                            <input type="text" class="form-control"  value="{{email}}" name="email">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Telefone de Recados</label>
+                            <input type="text" class="form-control" 
+                                value="{{TelefoneRecado}}">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
-                        <input type="text" class="form-control" placeholder="Disturbios" value="{{DisturbioPsquicos}}"
-                            name="DisturbioPsiquico">
+
+                    </br>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">e-mail Opcional</label>
+                            <input type="text" class="form-control" 
+                                value="{{emailOpcional}}" name="emailOpcional">
+                        </div>
+
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">PCD</label>
-                        <input type="text" class="form-control" placeholder="PCD" value="{{PCD}}" name="PCD">
+
+                    </br>
+
+                    <p>Cuidador/Responsável</p>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Nome Responsável</label>
+                            <input type="text" class="form-control" 
+                                value="{{NomeResponsavel}}" name="NomeResponsavel">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Nome Cuidador</label>
+                            <input type="text" class="form-control"  value="{{NomeCuidador}}"
+                                name="Cuidador">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Telefone Responsável/Cuidador</label>
+                            <input type="text" class="form-control" 
+                                value="{{TelefoneCuidador}}" name="TelefoneCuidador">
+                        </div>
                     </div>
-                </div>
-                </br>
+
+                    </br>
+
+
+
+
+
+                </form>
+
                 {{/DadosProntuario}}
-                <button type="button submit" class="btn btn-info">Registrar Consulta</button>
-
-               
-            </form>
 
 
+            </div>
 
 
+            <div id="Consultas">
 
-        </div>
-
-        <div id="Vacinas">
-
-            <h3>Vacinas</h3>
+                <h3>Consultas</h3>
 
 
 
 
 
-            <form method="post" action="/NovaVacina">
-                {{#DadosProntuario}}
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">id</label>
-                        <input type="text" class="form-control" placeholder="id" value="{{id}}" name="id">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">CPF</label>
-                        <input type="text" class="form-control" placeholder="CPF" value="{{CPF}}" name="CPF">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Descrição da Vacina</label>
-                        <input type="text" class="form-control" placeholder="Vacinas" value="{{Vacina}}" name="Vacina">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Data Validade</label>
-                        <input type="text" class="form-control" placeholder="DataValidade" value="{{Validade}}"
-                            name="Validade">
-                    </div>
-                </div>
-                {{/DadosProntuario}}
-                </br>
-                <button type="button submit" class="btn btn-info">Registrar Vacinação</button>
-            </form>
-
-
-
-
-        </div>
-
-
-        <div id="Alertas">
-
-            <h3>Definir Lembretes</h3>
-
-
-
-            <form>
-                {{#DadosProntuario}}
-                <div class="row">
-                    <div class="col">
-                        <label for="inputEmail4">id</label>
-                        <input type="text" class="form-control" placeholder="id" value="{{id}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">CPF</label>
-                        <input type="text" class="form-control" placeholder="CPF" value="{{CPF}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Tipo de Lembrete</label>
-                        <input type="text" class="form-control" placeholder="Alertas" value="Alertas">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Hora:</label>
-                        <input type="text" class="form-control" placeholder="Hora" value="Hora">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Data:</label>
-                        <input type="text" class="form-control" placeholder="Data" value="Data">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Descrição:</label>
-                        <input type="text" class="form-control" placeholder="Descrição" value="Descricao">
-                    </div>
-                </div>
-                </br>
-                {{/DadosProntuario}}
-                <button type="button submit" class="btn btn-info">Inserir Lembrete</button>
-            </form>
-
-
-
-        </div>
-
-        <div id="Alergias" method="post" action="/NovaVacina">
-
-            <h3>Alergias</h3>
-
-
-
-
-
-            <form>
-                {{#DadosProntuario}}
-
-                <div class="row">
+                <form method="post" action="/NovaConsulta">
+                    {{#DadosProntuario}}
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Tipo de Consulta</label>
+                            <input type="text" class="form-control"  value="{{Consulta}}"
+                                name="Consulta">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Data Consulta</label>
+                            <input type="text" class="form-control" value="{{Data}}" name="Data">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Especialidade</label>
+                            <input type="text" class="form-control" 
+                                value="{{Especialidade}}" name="Especialidade">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Medico</label>
+                            <input type="text" class="form-control"  value="{{Medico}}"
+                                name="Medico">
+                        </div>
                    
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Hospital</label>
+                            <input type="text" class="form-control"  value="{{NomeHospital}}"
+                                name="NomeHospital">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Logradouro Hospital</label>
+                            <input type="text" class="form-control"  value="{{RuaHospital}}"
+                                name="RuaHospital">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Numero</label>
+                            <input type="text" class="form-control"  value="{{NumeroHospital}}"
+                                name="NumeroHospital">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Bairro</label>
+                            <input type="text" class="form-control"  value="{{BairroHospital}}"
+                                name="BairroHospital">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Cep Hospital</label>
+                            <input type="text" class="form-control"  value="{{CepHospital}}"
+                                name="CepHospital">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Risco</label>
+                            <input type="text" class="form-control"  value="{{GrupoRisco}}"
+                                name="GrupoRisco">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Disturbios DisturbioPsquicos</label>
+                            <input type="text" class="form-control" 
+                                value="{{DisturbioPsquicos}}" name="DisturbioPsiquico">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">PCD</label>
+                            <input type="text" class="form-control" value="{{PCD}}" name="PCD">
+                        </div>
+                    </div>
+                    </br>
+                    {{/DadosProntuario}}
+
+
+
+                </form>
+
+
+
+
+
+            </div>
+           
+
+            <div id="Vacinas">
+
+                <h3>Vacinas</h3>
+
+
+
+
+
+                <form method="post" action="/NovaVacina">
+                    {{#DadosProntuario}}
+                    <div class="row">
                     
-                    <div class="col">
-                        <label for="inputEmail4">id</label>
-                        <input type="text" class="form-control" value="{{id}}">
+                        <div class="col">
+                            <label for="inputEmail4">Descrição da Vacina</label>
+                            <input type="text" class="form-control"  value="{{Vacina}}"
+                                name="Vacina">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Data Validade</label>
+                            <input type="text" class="form-control"  value="{{Validade}}"
+                                name="Validade">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="inputEmail4">CPF</label>
-                        <input type="text" class="form-control" placeholder="CPF" value="{{CPF}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Tipo de Alergia</label>
-                        <input type="text" class="form-control" placeholder="Tipo de Alergia" value="{{NomeAlergia}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Descricao:</label>
-                        <input type="text" class="form-control" placeholder="Descrição da Reação" value="{{Descricao}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">Homologador:</label>
-                        <input type="text" class="form-control" placeholder="Homologador" value="{{Homologador}}">
-                    </div>
-                    <div class="col">
-                        <label for="inputEmail4">DataInclusao:</label>
-                        <input type="text" class="form-control" placeholder="Data de Inserção" value="{{DataInclusao}}">
-                    </div>
-                </div>
-                </br>
-                {{/DadosProntuario}}
+                    {{/DadosProntuario}}
+                    </br>
 
-                <button type="button submit" class="btn btn-info">Salvar  Alergia</button>
-            </form>
+                </form>
 
 
+
+
+            </div>
+
+
+            <div id="Alertas">
+
+                <h3>Definir Lembretes</h3>
+
+
+
+                <form>
+                    {{#DadosProntuario}}
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Titulo Lembrete</label>
+                            <input type="text" class="form-control"  value="{{Titulo}}">
+                        </div>
+                        
+                        <div class="col">
+                            <label for="inputEmail4">Tipo de Lembrete</label>
+                            <input type="text" class="form-control"  value="{{TipoLembrete}}">
+                        </div>
+                         <div class="col">
+                            <label for="inputEmail4">Data:</label>
+                            <input type="text" class="form-control"  value="{{DataLembrete}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Descrição:</label>
+                            <input type="text" class="form-control"  value="{{Descricao}}">
+                        </div>
+                    </div>
+                    </br>
+                    {{/DadosProntuario}}
+
+                </form>
+
+
+
+            </div>
+
+            <div id="Alergias" method="post" action="/NovaVacina">
+
+                <h3>Alergias</h3>
+
+
+
+
+
+                <form>
+                    {{#DadosProntuario}}
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputEmail4">Tipo de Alergia</label>
+                            <input type="text" class="form-control" 
+                                value="{{NomeAlergia}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Descricao:</label>
+                            <input type="text" class="form-control" 
+                                value="{{Descricao}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">Homologador:</label>
+                            <input type="text" class="form-control"  value="{{Homologador}}">
+                        </div>
+                        <div class="col">
+                            <label for="inputEmail4">DataInclusao:</label>
+                            <input type="text" class="form-control" 
+                                value="{{DataInclusao}}">
+                        </div>
+                    </div>
+                    </br>
+                    {{/DadosProntuario}}
+
+
+                </form>
+
+
+
+            </div>
 
         </div>
-
-
 
 
 

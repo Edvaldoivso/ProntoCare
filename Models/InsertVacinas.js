@@ -27,13 +27,13 @@ var DadosVacina =  db.sequelize.define('Vacina', { // Este é a forma de montar 
 /*
 DadosVacina.create({
     //Exemplo do create  Nome:"Edvaldo",
-    Vacina:"BCG",
+    Vacina:"HEPATITE",
     Validade:"10-10-2021"
 
-
-
 })
+
 */
+
 
 module.exports = DadosVacina;
     

@@ -45,9 +45,7 @@ var DadosEndereco =  db.sequelize.define('Endereco', { // Este é a forma de mon
 DadosEndereco.create({
     //Exemplo do create  Nome:"Edvaldo",
     Vacina:"BCG",
-    Validade:"10-10-2021"
-
-
+    Validade:"03-07-2020"
 
 })
 */

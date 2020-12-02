@@ -74,11 +74,25 @@ function Vacinas(){
 
 }
 
+
+function IniciaConsulta(){
+    var CPF = localStorage.getItem('CPF');
+    window.location.href = "http://localhost:8081/NovaConsulta/"+CPF;
+
+}
+
 function Voltar(){
     window.location.href = "http://localhost:8081/Home";
 
 }
 
+function VoltarRota(){
+
+    var CPF = localStorage.getItem('CPF');
+    window.location.href = "http://localhost:8081/VoltarDados/"+CPF;
+
+    
+}
 
 
 
