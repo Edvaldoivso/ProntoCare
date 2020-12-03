@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, "js")))
 //ROTAS APLICATIVO---------------------------------- 
 
 
-app.get("/Index", function (req, res) {
+app.get("/", function (req, res) {
 
     res.render("Index")
 
